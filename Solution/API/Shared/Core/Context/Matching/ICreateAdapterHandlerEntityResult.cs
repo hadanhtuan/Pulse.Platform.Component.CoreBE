@@ -1,4 +1,4 @@
-﻿using AODB.PipelineRulesInterfaces.Matching;
+﻿using PipelineRulesInterfaces.Matching;
 
 namespace API.Shared.Core.Context.Matching
 {

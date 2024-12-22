@@ -1,5 +1,4 @@
-﻿
-using API.Shared.Core.Interfaces.Responses;
+﻿using API.Shared.Core.Interfaces.Responses;
 
 namespace API.Shared.Core.Interfaces.Actions
 {
@@ -20,7 +19,7 @@ namespace API.Shared.Core.Interfaces.Actions
         /// Executes the business logic defined for this action.
         /// </summary>
         /// <param name="input">The populated input configuration.</param>
-        /// <param name="context">Context used to send an update to the AODB.</param>
+        /// <param name="context">Context used to send an update to the </param>
         /// <returns>An <c>ActionResult</c> with details on the execution.</returns>
         public IActionExecutionResult Execute(TActionConfiguration input, IExecutionContext context);
     }

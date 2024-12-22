@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-// using SA.Aodb.Actions.Interfaces.Meta;
+// using SA.Actions.Interfaces.Meta;
 using System.Collections.Generic;
 
 namespace API.Shared.IO.Responses
@@ -17,10 +17,13 @@ namespace API.Shared.IO.Responses
         public string Description { get; set; } = null!;
         public string Group { get; set; } = null!;
         public bool? HasPermission { get; set; }
+
         public bool? FulfilledPreconditions { get; set; }
+
         // Keys that need to be pressed simultaneously to trigger the action
         public List<string>? Shortcut { get; set; }
         public bool IsSuggested { get; set; }
+
         public int Weight { get; set; }
         // [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         // public ModalSize ModalSize { get; set; }

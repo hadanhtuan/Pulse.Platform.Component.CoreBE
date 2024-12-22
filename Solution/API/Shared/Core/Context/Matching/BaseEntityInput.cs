@@ -1,4 +1,4 @@
-﻿using AODB.Rules.ContextInterfaces.Matching;
+﻿using Rules.ContextInterfaces.Matching;
 using System;
 using System.Collections.Generic;
 
@@ -9,14 +9,18 @@ namespace API.Shared.Core.Context.Matching
     {
         /// <inheritdoc/>
         public string MessageSource { get; set; } = null!;
+
         /// <inheritdoc/>
         public string MessageType { get; set; } = null!;
+
         /// <inheritdoc/>
         public DateTime? Received { get; set; } = null!;
+
         /// <inheritdoc/>
         public string EntityType { get; protected set; } = null!;
 
-        private readonly List<string> _includedAttributes = new ();
+        private readonly List<string> _includedAttributes = new();
+
         /// <inheritdoc/>
         public IEnumerable<string> IncludedAttributes => _includedAttributes.AsReadOnly();
 

@@ -1,4 +1,4 @@
-﻿using AODB.Rules.Context.Matching;
+﻿using Rules.Context.Matching;
 using API.Shared.Core.Interfaces.Responses;
 
 namespace API.Shared.Core.Interfaces.Actions

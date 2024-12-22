@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
-using SA.Aodb.Actions.Framework.IO.Responses;
-using SA.Aodb.Actions.Framework.Providers.Cache;
-using SA.Aodb.Actions.Interfaces.Responses;
+using SA.Actions.Framework.IO.Responses;
+using SA.Actions.Framework.Providers.Cache;
+using SA.Actions.Interfaces.Responses;
 using System;
 using System.Collections.Generic;
 
@@ -34,7 +34,8 @@ namespace API.Services
         /// <param name="entityId">The unique identifier of the entity</param>
         /// <param name="includeHidden">Option to include hidden actions</param>
         /// <returns>A list of all actions</returns>
-        IEnumerable<MinimalActionView> GetEntityActions(string entityTypeName, Guid entityId, bool includeHidden = false);
+        IEnumerable<MinimalActionView> GetEntityActions(string entityTypeName, Guid entityId,
+            bool includeHidden = false);
 
         /// <summary>
         /// Returns detailed info about the action configuration

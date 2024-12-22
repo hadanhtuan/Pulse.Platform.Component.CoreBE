@@ -1,4 +1,4 @@
-﻿using AODB.Rules.Context.Matching;
+﻿using Rules.Context.Matching;
 using API.Shared.Core.Interfaces.Responses;
 using System.Linq.Expressions;
 
@@ -16,18 +16,18 @@ namespace API.Shared.Core.Interfaces.Actions
         /// <typeparam name="TEntity">The entity the update should map to.</typeparam>
         /// <param name="entity"></param>
         /// <param name="customAttributes">Custom attributes which can extend the entity model</param>
-        void Update<TEntity>(TEntity entity, IDictionary<string, object>? customAttributes = null) 
+        void Update<TEntity>(TEntity entity, IDictionary<string, object>? customAttributes = null)
             where TEntity : BaseEntityInput;
 
         /// <summary>
-        /// Marks the property to be deleted when it is picked up by the AODB. If a value is supplied to entity as well, 
+        /// Marks the property to be deleted when it is picked up by the  If a value is supplied to entity as well, 
         /// all receieved values will be deleted, and the new value applied after.
         /// </summary>
         /// <typeparam name="TEntity">The type of EntityInput to delete a property for.</typeparam>
         /// <typeparam name="TProperty">The property/attribute selector to delete values for.</typeparam>
         /// <param name="entity">The entity that the property/attribute should be deleted for.</param>
         /// <param name="property">The property/attribute that all received values should be deleted for.</param>
-        void Delete<TEntity, TProperty>(TEntity entity, Expression<Func<TEntity, TProperty>> property) 
+        void Delete<TEntity, TProperty>(TEntity entity, Expression<Func<TEntity, TProperty>> property)
             where TEntity : BaseEntityInput;
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace API.Shared.Core.Interfaces.Actions
         /// needs to be called as well. 
         /// </summary>
         /// <param name="onEntity">The entity that the action should be reverted on.</param>
-        void RevertAction<TRevertable, TEntity>(TEntity onEntity) 
+        void RevertAction<TRevertable, TEntity>(TEntity onEntity)
             where TRevertable : IAction, IRevertable
             where TEntity : BaseEntityInput;
 

@@ -1,0 +1,15 @@
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.csproj.AssemblyReference.cache
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.AssemblyInfoInputs.cache
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.AssemblyInfo.cs
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.csproj.CoreCompileInputs.cache
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\bin\Debug\net8.0\Database.deps.json
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\bin\Debug\net8.0\Database.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\bin\Debug\net8.0\Database.pdb
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\bin\Debug\net8.0\Library.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\bin\Debug\net8.0\Library.pdb
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.csproj.Up2Date
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\refint\Database.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\Database.pdb
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\Database\obj\Debug\net8.0\ref\Database.dll

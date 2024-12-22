@@ -1,6 +1,6 @@
-﻿using SA.Aodb.Actions.Framework.IO.Schema;
+﻿using SA.Actions.Framework.IO.Schema;
 
-namespace SA.Aodb.Actions.Framework.IO.Responses
+namespace SA.Actions.Framework.IO.Responses
 {
     /// <summary>
     /// Presents information on one attribute contained in an action where the internal name is used for

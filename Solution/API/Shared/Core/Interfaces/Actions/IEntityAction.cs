@@ -41,7 +41,7 @@ namespace API.Shared.Core.Interfaces.Actions
         /// </summary>
         /// <param name="entity">The entity affected by the action.</param>
         /// <param name="input">The populatedinput configuration.</param>
-        /// <param name="context">Context used to send an update to the AODB.</param>
+        /// <param name="context">Context used to send an update to the </param>
         /// <returns>An <c>ActionResult</c> with details on the execution.</returns>
         public IActionExecutionResult Execute(TEntity entity, TActionConfiguration input, IExecutionContext context);
     }

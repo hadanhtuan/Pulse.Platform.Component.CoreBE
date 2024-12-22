@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API.Services;
+using Microsoft.AspNetCore.Mvc;
+using Services.Schema.Service;
 
 namespace API.Controllers
 {
@@ -7,27 +9,40 @@ namespace API.Controllers
     [ApiExplorerSettings(GroupName = "actions")]
     public class ActionApiController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly ILogger logger;
+        private readonly IActionService actionService;
+        private readonly ISchemaService schemaService;
 
-        private readonly ILogger<ActionApiController> _logger;
-
-        public ActionApiController(ILogger<ActionApiController> logger)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="loggerFactory">Supplied by DI</param>
+        /// <param name="auditLoggerFactory">Supplied by DI</param>
+        /// <param name="actionService">Supplied by DI</param>
+        /// <param name="schemaService"></param>
+        /// <param name="assemblyChecker"></param>
+        /// <param name="userContext">Supplied by DI</param>
+        public ActionApiController(
+            ILogger<ActionApiController> logger,
+            IActionService actionService
+        )
         {
-            _logger = logger;
+            logger = logger;
+            this.actionService = actionService;
         }
 
         [HttpGet(Name = "{entityName}/{entityId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetEntityActions(string entityName, Guid entityId)
         {
+            logger.LogDebug($"Received request to list all actions for entity type: '{entityName}' " +
+                            $"and id: '{entityId}'.");
             return ValidateAndExecute(entityName, () =>
             {
                 var actions = actionService.GetEntityActions(entityName, entityId, false);
-        
+
                 if (actions.Any())
                 {
                     return Ok(actions);
@@ -57,12 +72,16 @@ namespace API.Controllers
             // {
             //     throw new ActionApiException(e);
             // }
-            
+
             return action.Invoke();
         }
 
         private void CheckPreconditions()
         {
+            // if (!assemblyChecker.AssembliesLoaded())
+            // {
+            //     throw new AssembliesNotFoundException();
+            // }
         }
     }
 }

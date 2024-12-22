@@ -1,6 +1,6 @@
-﻿using AODB.PipelineRulesInterfaces.Filtering;
-using AODB.PipelineRulesInterfaces.Matching;
-using AODB.Rules.ContextInterfaces.Matching;
+﻿using PipelineRulesInterfaces.Filtering;
+using PipelineRulesInterfaces.Matching;
+using Rules.ContextInterfaces.Matching;
 using System;
 
 namespace API.Shared.Core.Context.Matching
@@ -19,9 +19,9 @@ namespace API.Shared.Core.Context.Matching
             BaseEntityInput entityInput,
             bool runSynchronously,
             IFilterRuleResult? filterResult
-            ) where TEntityInputInterface : IEntityInput
+        ) where TEntityInputInterface : IEntityInput
         {
-            return new AdapterHandlerResult(matchError, identifier, entityInput, runSynchronously, 
+            return new AdapterHandlerResult(matchError, identifier, entityInput, runSynchronously,
                 typeof(TEntityInputInterface), filterResult);
         }
 
@@ -32,7 +32,7 @@ namespace API.Shared.Core.Context.Matching
             bool runSynchronously,
             Type entityInputInterfaceType,
             IFilterRuleResult? filterResult
-            ) : base(identifier, entityInput, entityInputInterfaceType)
+        ) : base(identifier, entityInput, entityInputInterfaceType)
         {
             MatchError = matchError;
             RunSynchronously = runSynchronously;

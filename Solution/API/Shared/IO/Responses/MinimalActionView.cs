@@ -1,4 +1,5 @@
-﻿// using SA.Aodb.Actions.Meta;
+﻿// using SA.Actions.Meta;
+
 using System.Linq;
 
 namespace API.Shared.IO.Responses
@@ -14,8 +15,8 @@ namespace API.Shared.IO.Responses
         public new bool HasPermission { get; set; }
 
         public static MinimalActionView FromActionMetadata(
-            ActionAttribute actionMeta, 
-            bool? hasPermission = null, 
+            ActionAttribute actionMeta,
+            bool? hasPermission = null,
             bool? fulfilledPreconditions = null)
         {
             return new MinimalActionView

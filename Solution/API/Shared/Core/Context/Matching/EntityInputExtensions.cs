@@ -1,5 +1,5 @@
-﻿using AODB.PipelineRulesInterfaces.Matching;
-using AODB.Rules.ContextInterfaces.Matching;
+﻿using PipelineRulesInterfaces.Matching;
+using Rules.ContextInterfaces.Matching;
 
 namespace API.Shared.Core.Context.Matching
 {
@@ -14,7 +14,7 @@ namespace API.Shared.Core.Context.Matching
         /// <returns></returns>
         public static IAdapterHandlerEntityResult ToAdapterHandlerEntityResult<TEntityInput>(
             this TEntityInput input)
-            where TEntityInput : IEntityInput => 
+            where TEntityInput : IEntityInput =>
             AdapterHandlerEntityResult.Create<TEntityInput>(null, (input as BaseEntityInput)!);
     }
 }

@@ -1,0 +1,12 @@
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\bin\Debug\net8.0\AdapterFactory.deps.json
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\bin\Debug\net8.0\AdapterFactory.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\bin\Debug\net8.0\AdapterFactory.pdb
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.csproj.AssemblyReference.cache
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.AssemblyInfoInputs.cache
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.AssemblyInfo.cs
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.csproj.CoreCompileInputs.cache
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\refint\AdapterFactory.dll
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\AdapterFactory.pdb
+C:\workspace\practices\pulse\Platform.Component.MEE\Solution\AdapterFactory\obj\Debug\net8.0\ref\AdapterFactory.dll

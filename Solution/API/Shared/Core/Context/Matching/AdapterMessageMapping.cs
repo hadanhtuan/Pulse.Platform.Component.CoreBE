@@ -1,4 +1,4 @@
-﻿using AODB.Rules.ContextInterfaces.Matching;
+﻿using Rules.ContextInterfaces.Matching;
 using System;
 
 namespace API.Shared.Core.Context.Matching
@@ -13,10 +13,10 @@ namespace API.Shared.Core.Context.Matching
             where TAdapterMessage : IAdapterMessage
             where TEntityInput : IEntityInput
             where TEntityInputImpl : BaseEntityInput, TEntityInput, new() => new AdapterMessageMapping
-            {
-                AdapterMessageType = typeof(TAdapterMessage),
-                EntityInputInterfaceType = typeof(TEntityInput),
-                EntityInputImplementationType = typeof(TEntityInputImpl)
-            };
+        {
+            AdapterMessageType = typeof(TAdapterMessage),
+            EntityInputInterfaceType = typeof(TEntityInput),
+            EntityInputImplementationType = typeof(TEntityInputImpl)
+        };
     }
 }
