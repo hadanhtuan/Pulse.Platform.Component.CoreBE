@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6jZnXSAWRF8=",
+  "dgSpecHash": "Xw7YhuGgOgk=",
   "success": true,
-  "projectFilePath": "C:\\workspace\\practices\\pulse\\Platform.Component.MEE\\Solution\\Library\\Library.csproj",
+  "projectFilePath": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hadt\\.nuget\\packages\\confluent.kafka\\1.9.3\\confluent.kafka.1.9.3.nupkg.sha512",
     "C:\\Users\\hadt\\.nuget\\packages\\dap.base.healthcheck\\3.0.0\\dap.base.healthcheck.3.0.0.nupkg.sha512",

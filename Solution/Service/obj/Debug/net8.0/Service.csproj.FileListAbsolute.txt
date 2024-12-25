@@ -1,0 +1,5 @@
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Service\obj\Debug\net8.0\Service.csproj.AssemblyReference.cache
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Service\obj\Debug\net8.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Service\obj\Debug\net8.0\Service.AssemblyInfoInputs.cache
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Service\obj\Debug\net8.0\Service.AssemblyInfo.cs
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Service\obj\Debug\net8.0\Service.csproj.CoreCompileInputs.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\practices\\pulse\\Platform.Component.MEE\\Solution\\Library\\Library.csproj": {}
+    "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\Library\\Library.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\practices\\pulse\\Platform.Component.MEE\\Solution\\Library\\Library.csproj": {
+    "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\practices\\pulse\\Platform.Component.MEE\\Solution\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\workspace\\practices\\pulse\\Platform.Component.MEE\\Solution\\Library\\Library.csproj",
+        "projectPath": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\Library\\Library.csproj",
         "packagesPath": "C:\\Users\\hadt\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\practices\\pulse\\Platform.Component.MEE\\Solution\\Library\\obj\\",
+        "outputPath": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -18,12 +18,7 @@
     <ItemGroup>
         <Folder Include="MessageBus\"/>
         <Folder Include="Models\"/>
-        <Folder Include="Shared\Core\Interfaces\Context\"/>
-        <Folder Include="Shared\IO\"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Services\Services.csproj"/>
+        <Folder Include="Shared\" />
     </ItemGroup>
 
 </Project>

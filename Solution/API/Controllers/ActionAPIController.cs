@@ -1,6 +1,4 @@
-﻿using API.Services;
-using Microsoft.AspNetCore.Mvc;
-using Services.Schema.Service;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
@@ -9,9 +7,9 @@ namespace API.Controllers
     [ApiExplorerSettings(GroupName = "actions")]
     public class ActionApiController : ControllerBase
     {
-        private readonly ILogger logger;
-        private readonly IActionService actionService;
-        private readonly ISchemaService schemaService;
+        // private readonly IActionService actionService;
+        // private readonly ISchemaService schemaService;
+
 
         /// <summary>
         /// Constructor
@@ -23,12 +21,10 @@ namespace API.Controllers
         /// <param name="assemblyChecker"></param>
         /// <param name="userContext">Supplied by DI</param>
         public ActionApiController(
-            ILogger<ActionApiController> logger,
-            IActionService actionService
+            // IActionService actionService
         )
         {
-            logger = logger;
-            this.actionService = actionService;
+            // this.actionService = actionService;
         }
 
         [HttpGet(Name = "{entityName}/{entityId:guid}")]
@@ -37,15 +33,16 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetEntityActions(string entityName, Guid entityId)
         {
-            logger.LogDebug($"Received request to list all actions for entity type: '{entityName}' " +
-                            $"and id: '{entityId}'.");
+            // logger.LogDebug($"Received request to list all actions for entity type: '{entityName}' " +
+            //                 $"and id: '{entityId}'.");
             return ValidateAndExecute(entityName, () =>
             {
-                var actions = actionService.GetEntityActions(entityName, entityId, false);
+                // var actions = actionService.GetEntityActions(entityName, entityId, false);
 
-                if (actions.Any())
+                // if (actions.Any())
+                if (true)
                 {
-                    return Ok(actions);
+                    return Ok();
                 }
                 else
                 {
