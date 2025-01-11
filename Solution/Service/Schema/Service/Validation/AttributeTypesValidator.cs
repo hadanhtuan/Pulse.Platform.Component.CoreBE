@@ -53,10 +53,10 @@ internal class AttributeTypesValidator : IAttributeTypesValidator
             : throw new EntityTypeDuplicateAttributesException(newEntityType.InternalName);
     }
 
-    /// <summary>
+    
     /// Validates that new value attribute types either do not already exist, or that the existing
     /// match is also a value attribute type with the same ValueDataType.
-    /// </summary>
+    
     /// <param name="newEntityType"></param>
     /// <param name="oldEntityType"></param>
     private static void ValidateValueAttributeTypes(EntityType newEntityType, EntityType oldEntityType)
@@ -96,10 +96,10 @@ internal class AttributeTypesValidator : IAttributeTypesValidator
         }
     }
 
-    /// <summary>
+    
     /// Validates that new complex attribute types either do not already exist, or that the existing
     /// match is also a complex attribute type with the same ComplexDataType and value of IsCollection.
-    /// </summary>
+    
     /// <param name="newEntityType"></param>
     /// <param name="oldEntityType"></param>
     private static void ValidateComplexAttributeTypes(EntityType newEntityType, EntityType oldEntityType)

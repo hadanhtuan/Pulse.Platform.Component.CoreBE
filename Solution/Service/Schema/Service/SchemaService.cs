@@ -1,7 +1,4 @@
-﻿using Database.Models.Schema;
-using Database.Models.Schema.Modifications;
-using Database.Services.Schema;
-using Core.Persistence.Repositories;
+﻿using Pulse.Library.Core.Persistence.Repositories;
 using Service.Schema.Service.Copy;
 using Service.Schema.Service.Validation;
 using Service.Schema.Service.Validation.Modifications;
@@ -63,10 +60,10 @@ internal class SchemaService : ISchemaService
         modification is IPossiblyDisruptive possiblyDisruptive &&
         possiblyDisruptive.CanContainDisruptiveDatabaseChanges();
 
-    /// <summary>
+    
     /// Updates the current version with the new schema version, incrementing
     /// the version number.
-    /// </summary>
+    
     /// <param name="newSchema">Incoming schema version with changes</param>
     /// <param name="currentSchema">Current schema version to be updated</param>
     private void UpdateSchema(SchemaVersion newSchema, SchemaVersion currentSchema)
@@ -77,10 +74,10 @@ internal class SchemaService : ISchemaService
         currentSchema.ValidFrom = DateTime.UtcNow;
     }
 
-    public bool CheckIfTypeExists(string typeName)
+    public bool CheckIfEntityExists(string entityInternalName)
     {
         var et = ReadSchema().EntityTypes;
 
-        return et.Any(x => x.InternalName == typeName);
+        return et.Any(x => x.InternalName == entityInternalName);
     }
 }

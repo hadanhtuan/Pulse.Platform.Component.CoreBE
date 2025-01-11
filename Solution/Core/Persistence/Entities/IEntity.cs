@@ -1,4 +1,4 @@
-﻿namespace Library.Persistence.EntityTypes;
+﻿namespace Pulse.Library.Core.Persistence.EntityTypes;
 
 public interface IEntity
 {

@@ -9,3 +9,4 @@ C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Core\obj\Debug\n
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Core\obj\Debug\net8.0\refint\Core.dll
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Core\obj\Debug\net8.0\Core.pdb
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Core\obj\Debug\net8.0\ref\Core.dll
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Core\obj\Debug\net8.0\Core.sourcelink.json

@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if a standard attribute of an entity type is missing.
-    /// </summary>
+    
     [Serializable]
     public class EntityTypeMissingStandardAttributeException : EntityTypeException
     {

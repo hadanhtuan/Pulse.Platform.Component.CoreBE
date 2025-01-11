@@ -1,15 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Library.Persistence.EntityTypes;
+namespace Pulse.Library.Core.Persistence.EntityTypes;
 
 public class Entity : Entity<Guid>, IEntity
 {
 }
 
-/// <summary>
+
 /// Generic implementation that allows you to define the Type of the Primary Key in a derived interface/class.
-/// </summary>
+
 /// <typeparam name="TKey"></typeparam>
 public abstract class Entity<TKey> : IEntity<TKey> where TKey : struct
 {

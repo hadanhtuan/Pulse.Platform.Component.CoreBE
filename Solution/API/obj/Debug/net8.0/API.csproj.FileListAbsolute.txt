@@ -68,3 +68,4 @@ C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\API\obj\Debug\ne
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\API\obj\Debug\net8.0\API.csproj.Up2Date
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\API\obj\Debug\net8.0\ref\API.dll
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\API\obj\Debug\net8.0\API.sourcelink.json

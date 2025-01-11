@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if the Schema contains non-unique constraints.
-    /// </summary>
+    
     [Serializable]
     public class SchemaContainsNonUniqueConstraintsException : SchemaVersionException
     {

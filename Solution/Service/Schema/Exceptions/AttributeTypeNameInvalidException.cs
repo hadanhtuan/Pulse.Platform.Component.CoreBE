@@ -2,9 +2,9 @@
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if name of attribute type is invalid.
-    /// </summary>
+    
     [Serializable]
     public class AttributeTypeNameInvalidException : EntityTypeException
     {

@@ -3,10 +3,10 @@ using Database.Models.Schema;
 
 namespace Service.Schema.Service.Validation;
 
-/// <summary>
+
 /// Performs validation of unique constraints in a schema and changes in unique
 /// constraints across schemas.
-/// </summary>
+
 internal interface IUniqueConstraintsValidator
 {
     void Validate(SchemaVersion newSchema, SchemaVersion oldSchema);

@@ -4,10 +4,10 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if IsCollection or ComplexDataType on ComplexAttributeType has changed, which is
     /// not allowed.
-    /// </summary>
+    
     [Serializable]
     public class ComplexAttributeTypeChangedException : EntityTypeException
     {

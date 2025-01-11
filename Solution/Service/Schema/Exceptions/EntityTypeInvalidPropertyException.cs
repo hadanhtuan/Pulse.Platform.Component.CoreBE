@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if a property of entity type is invalid.
-    /// </summary>
+    
     [Serializable]
     public class EntityTypeInvalidPropertyException : EntityTypeException
     {

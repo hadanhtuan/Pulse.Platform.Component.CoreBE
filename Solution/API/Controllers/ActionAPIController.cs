@@ -1,84 +1,61 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace API.Controllers;
+
+[ApiController]
+[Route("api/actions")]
+public class ActionApiController : ControllerBase
 {
-    [ApiController]
-    [Route("api/actions")]
-    [ApiExplorerSettings(GroupName = "actions")]
-    public class ActionApiController : ControllerBase
+    // private readonly IActionService actionService;
+    // private readonly ISchemaService schemaService;
+
+    [HttpGet]
+    [Route("{entityName}/{entityId:guid}")]
+    public IActionResult GetEntityActions(string entityName, Guid entityId)
     {
-        // private readonly IActionService actionService;
-        // private readonly ISchemaService schemaService;
-
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="loggerFactory">Supplied by DI</param>
-        /// <param name="auditLoggerFactory">Supplied by DI</param>
-        /// <param name="actionService">Supplied by DI</param>
-        /// <param name="schemaService"></param>
-        /// <param name="assemblyChecker"></param>
-        /// <param name="userContext">Supplied by DI</param>
-        public ActionApiController(
-            // IActionService actionService
-        )
+        return ValidateAndExecute(entityName, () =>
         {
-            // this.actionService = actionService;
-        }
-
-        [HttpGet(Name = "{entityName}/{entityId:guid}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult GetEntityActions(string entityName, Guid entityId)
-        {
-            // logger.LogDebug($"Received request to list all actions for entity type: '{entityName}' " +
-            //                 $"and id: '{entityId}'.");
-            return ValidateAndExecute(entityName, () =>
+            // var actions = actionService.GetEntityActions(entityName, entityId, false);
+        
+            // if (actions.Any())
+            if (true)
             {
-                // var actions = actionService.GetEntityActions(entityName, entityId, false);
+                return Ok();
+            }
+            else
+            {
+                return NoContent();
+            }
+        });
+    }
 
-                // if (actions.Any())
-                if (true)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return NoContent();
-                }
-            });
-        }
+    private IActionResult ValidateAndExecute(string entityTypeName, Func<IActionResult> action,
+        Guid? entityId = null)
+    {
+        CheckPreconditions();
 
-        private IActionResult ValidateAndExecute(string entityTypeName, Func<IActionResult> action,
-            Guid? entityId = null)
-        {
-            CheckPreconditions();
+        // if (!schemaService.CheckIfTypeExists(entityTypeName))
+        // {
+        //     throw new EntityTypeNotFoundException(entityTypeName);
+        // }
 
-            // if (!schemaService.CheckIfTypeExists(entityTypeName))
-            // {
-            //     throw new EntityTypeNotFoundException(entityTypeName);
-            // }
+        // try
+        // {
+        //     return action.Invoke();
+        // }
+        // catch (FormattedMessageException e)
+        // {
+        //     throw new ActionApiException(e);
+        // }
 
-            // try
-            // {
-            //     return action.Invoke();
-            // }
-            // catch (FormattedMessageException e)
-            // {
-            //     throw new ActionApiException(e);
-            // }
+        return action.Invoke();
+    }
 
-            return action.Invoke();
-        }
-
-        private void CheckPreconditions()
-        {
-            // if (!assemblyChecker.AssembliesLoaded())
-            // {
-            //     throw new AssembliesNotFoundException();
-            // }
-        }
+    private void CheckPreconditions()
+    {
+        // if (!assemblyChecker.AssembliesLoaded())
+        // {
+        //     throw new AssembliesNotFoundException();
+        // }
     }
 }

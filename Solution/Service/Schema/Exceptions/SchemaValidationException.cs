@@ -5,10 +5,10 @@ using System.Security.Permissions;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Base class for exception thrown if a new schema does not validate,
     /// providing properties for a template-based message using parameters.
-    /// </summary>
+    
     [Serializable]
     public abstract class SchemaValidationException : Exception
     {

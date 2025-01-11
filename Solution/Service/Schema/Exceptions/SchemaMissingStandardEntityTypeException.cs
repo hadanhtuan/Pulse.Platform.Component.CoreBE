@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if a standard entity type does not exist in state Active.
-    /// </summary>
+    
     [Serializable]
     public class SchemaMissingStandardEntityTypeException : SchemaVersionException
     {

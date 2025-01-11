@@ -4,10 +4,10 @@ namespace Service.Schema.Service.Copy;
 
 internal static class CopyExtension
 {
-    /// <summary>
+    
     /// Copy the value of all writable properties on type T from source
     /// to target, excluding those with name in the ignoredProperties.
-    /// </summary>
+    
     /// <typeparam name="T">type of copied objecte</typeparam>
     /// <param name="source">source object</param>
     /// <param name="target">target object</param>

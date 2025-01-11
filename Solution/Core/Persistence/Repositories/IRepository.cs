@@ -1,22 +1,22 @@
-﻿using Library.Persistence.EntityTypes;
+﻿using Pulse.Library.Core.Persistence.EntityTypes;
 using System.Linq.Expressions;
 
 namespace Core.Persistence.Repositories;
 
-/// <summary>
+
 /// Collection-like interface for accessing domain objects in persistent storage layer with primary keys set to Guids as default.
 /// Provides operations similar to many of those defined 
-/// </summary>
+
 /// <typeparam name="TAggregateRoot"></typeparam>
 public interface IRepository<TAggregateRoot> : IRepository<TAggregateRoot, Guid>
     where TAggregateRoot : IAggregateRoot
 {
 }
 
-/// <summary>
+
 /// Generic, Collection-like interface for accessing domain objects in persistent storage layer.
 /// Provides operations similar to many of those defined 
-/// </summary>
+
 /// <typeparam name="TAggregateRoot"></typeparam>
 /// <typeparam name="TKey"></typeparam>
 public interface IRepository<TAggregateRoot, TKey>

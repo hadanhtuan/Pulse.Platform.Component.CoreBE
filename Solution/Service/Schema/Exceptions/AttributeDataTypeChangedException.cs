@@ -4,10 +4,10 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if data type of attribute type has changed, which is
     /// not allowed.
-    /// </summary>
+    
     [Serializable]
     public class AttributeDataTypeChangedException : EntityTypeException
     {

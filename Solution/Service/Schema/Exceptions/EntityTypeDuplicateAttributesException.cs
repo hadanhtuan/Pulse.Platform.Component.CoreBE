@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if an attribute type appears more than once in entity type.
-    /// </summary>
+    
     [Serializable]
     public class EntityTypeDuplicateAttributesException : EntityTypeException
     {

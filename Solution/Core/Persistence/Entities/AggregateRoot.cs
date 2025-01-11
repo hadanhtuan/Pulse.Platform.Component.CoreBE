@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Library.Persistence.EntityTypes;
+namespace Pulse.Library.Core.Persistence.EntityTypes;
 
-/// <summary>
+
 /// Default AggregateRoot type that uses guids as primary keys.
-/// </summary>
+
 public abstract class AggregateRoot : AggregateRoot<Guid>, IAggregateRootWithDomainEvents
 {
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -16,9 +16,9 @@ public abstract class AggregateRoot : AggregateRoot<Guid>, IAggregateRootWithDom
     }
 }
 
-/// <summary>
+
 /// Generic implementation that allows you to define the type of the primary key in a derived interface/class.
-/// </summary>
+
 /// <typeparam name="TKey"></typeparam>
 public abstract class AggregateRoot<TKey> : Entity<TKey>, IAggregateRootWithDomainEvents<TKey> where TKey : struct
 {

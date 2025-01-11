@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown because a new schema was not a valid update to an existing schema.
-    /// </summary>
+    
     [Serializable]
     public class SchemaVersionException : SchemaValidationException
     {

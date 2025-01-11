@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if an existing entity type is missing.
-    /// </summary>
+    
     [Serializable]
     public class SchemaMissingEntityTypeException : SchemaVersionException
     {

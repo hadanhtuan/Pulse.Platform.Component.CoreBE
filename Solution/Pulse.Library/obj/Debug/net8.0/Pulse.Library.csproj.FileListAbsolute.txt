@@ -1,0 +1,6 @@
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Pulse.Library\obj\Debug\net8.0\Pulse.Library.csproj.AssemblyReference.cache
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Pulse.Library\obj\Debug\net8.0\Pulse.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Pulse.Library\obj\Debug\net8.0\Pulse.Library.AssemblyInfoInputs.cache
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Pulse.Library\obj\Debug\net8.0\Pulse.Library.AssemblyInfo.cs
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Pulse.Library\obj\Debug\net8.0\Pulse.Library.csproj.CoreCompileInputs.cache
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\Pulse.Library\obj\Debug\net8.0\Pulse.Library.sourcelink.json

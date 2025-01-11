@@ -5,9 +5,9 @@ namespace Domain.AdapterFactory
 {
     public static class TypeExtensions
     {
-        /// <summary>
+        
         /// Returns the parent types, including base type and interfaces, of the given <paramref name="type"/>.
-        /// </summary>
+        
         /// <param name="type"></param>
         /// <returns></returns>
         public static IEnumerable<Type> GetParentTypes(this Type type)

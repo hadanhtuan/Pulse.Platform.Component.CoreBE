@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown if schema contains two entity type with the same name.
-    /// </summary>
+    
     [Serializable]
     public class SchemaHasDuplicateEntityTypeException : SchemaVersionException
     {

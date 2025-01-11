@@ -1,13 +1,13 @@
 ﻿namespace Domain.AdapterFactory;
 
-/// <summary>
+
 /// An adapter manager maintains a registry of adapter factories, which are
 /// obtained from an <see cref="IServiceProvider"/> when needed.
 /// 
 /// The adapter manager looks up an IAdapterFactory for the given types for
 /// adaptee and adapter, then delegates the GetAdapter invocation to the found
 /// IAdapterFactory.getAdapter method.
-/// </summary>
+
 internal class AdapterManager : IAdapterManager
 {
     private readonly IServiceProvider serviceProvider;

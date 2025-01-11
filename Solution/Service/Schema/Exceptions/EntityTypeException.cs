@@ -4,10 +4,10 @@ using System.Runtime.Serialization;
 
 namespace Service.Schema.Exceptions
 {
-    /// <summary>
+    
     /// Exception thrown because a new schema did not contain a valid definition
     /// of an entity type compared to the existing schema.
-    /// </summary>
+    
     [Serializable]
     public class EntityTypeException : SchemaValidationException
     {

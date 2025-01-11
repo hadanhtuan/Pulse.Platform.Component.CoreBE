@@ -9,3 +9,4 @@ C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\ComponentContext
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\ComponentContext\obj\Debug\net8.0\refint\ComponentContext.dll
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\ComponentContext\obj\Debug\net8.0\ComponentContext.pdb
 C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\ComponentContext\obj\Debug\net8.0\ref\ComponentContext.dll
+C:\workspace\practices\pulse\Platform.Component.CoreBE\Solution\ComponentContext\obj\Debug\net8.0\ComponentContext.sourcelink.json
