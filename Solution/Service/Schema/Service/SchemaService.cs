@@ -28,7 +28,7 @@ internal class SchemaService : ISchemaService
     }
 
     public SchemaVersion ReadSchema() =>
-        // There is always only one schema
+        /// There is always only one schema
         schemaRepository.Single(_ => true);
 
     public async Task<SchemaUpdateResult> UpdateSchema(SchemaVersion newSchema,

@@ -50,10 +50,10 @@ namespace Database.Data
 
         public DbSet<BackgroundEvent> BackgroundEvents { get; set; } = null!;
 
-        // This entity is "owned" by the PluginContext and migrations are contained in Database.Plugins
+        /// This entity is "owned" by the PluginContext and migrations are contained in Database.Plugins
         public DbSet<ConfigurationVersion> ConfigurationVersions { get; set; } = null!;
 
-        // This entity is "owned" by the PluginContext and migrations are contained in Database.Plugins
+        /// This entity is "owned" by the PluginContext and migrations are contained in Database.Plugins
         public DbSet<PluginAssembly> PluginAssembly { get; set; } = null!;
 
         
@@ -72,7 +72,7 @@ namespace Database.Data
             this.serviceProvider = serviceProvider;
         }
 
-        // Allows for derived classes with options for those classes
+        /// Allows for derived classes with options for those classes
         protected SchemaContext(DbContextOptions options, IServiceProvider? serviceProvider)
             : base(options)
         {
@@ -91,7 +91,7 @@ namespace Database.Data
             modelBuilder.Entity<EntityValueAlert>();
             modelBuilder.Entity<RawMessageAlert>();
 
-            // Migrations for these entities are contained in Database.Plugins
+            /// Migrations for these entities are contained in Database.Plugins
             modelBuilder.Entity<ConfigurationVersion>()
                 .ToTable("ConfigurationVersions", t => t.ExcludeFromMigrations());
             modelBuilder.Entity<PluginAssembly>()

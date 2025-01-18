@@ -20,4 +20,9 @@
         <Folder Include="Shared\" />
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Pulse.Library\Pulse.Library.csproj"/>
+    </ItemGroup>
+
+
 </Project>

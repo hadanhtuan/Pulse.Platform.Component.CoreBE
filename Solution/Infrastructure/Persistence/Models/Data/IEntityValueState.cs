@@ -50,8 +50,8 @@ namespace Database.Models.Data
         
         /// This holds all identifiers which have been manually removed from the entity
         
-        // Should this be dictionary/class such that we can map attribute -> value. Should this be updated in configuration? E.g. in rules, current message == man unmatch -> add identifier.
-        // For now much better to do in receiver actions, but should probably be moved at some point as it is quite client specific (but so are some of the actions right now).
+        /// Should this be dictionary/class such that we can map attribute -> value. Should this be updated in configuration? E.g. in rules, current message == man unmatch -> add identifier.
+        /// For now much better to do in receiver actions, but should probably be moved at some point as it is quite client specific (but so are some of the actions right now).
         IDictionary<string, HashSet<string>> InvalidIdentifiers { get; }
 
         

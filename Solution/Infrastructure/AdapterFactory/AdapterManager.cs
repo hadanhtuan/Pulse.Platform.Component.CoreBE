@@ -26,15 +26,15 @@ internal class AdapterManager : IAdapterManager
 
         var factory = LookupFactory<TAdapter>(adaptee);
 
-        // No IAdapterFactory registered for the adaptation from adaptee type to TAdapter
+        /// No IAdapterFactory registered for the adaptation from adaptee type to TAdapter
         if (factory == null)
         {
             return null;
         }
 
-        // Using reflection, build a generic method for
-        // IAdapterFactory<TAdaptee,TAdapter>.GetAdapter(TAdaptee adaptee)
-        // that can be used to invoke GetAdapter with specific type arguments
+        /// Using reflection, build a generic method for
+        /// IAdapterFactory<TAdaptee,TAdapter>.GetAdapter(TAdaptee adaptee)
+        /// that can be used to invoke GetAdapter with specific type arguments
         var method = factory.GetType().GetMethod("GetAdapter")!;
 
         return (TAdapter?)method.Invoke(factory, new[] { adaptee });
@@ -46,7 +46,7 @@ internal class AdapterManager : IAdapterManager
 
         if (factory == null)
         {
-            // Try parent types of adaptee
+            /// Try parent types of adaptee
             factory = adaptee.GetType().GetParentTypes()
                 .Select(t => TryLookupFactory<TAdapter>(t))
                 .FirstOrDefault(factory => factory is not null);

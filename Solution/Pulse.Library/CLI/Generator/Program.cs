@@ -1,33 +1,29 @@
-﻿using Pulse.Library.CLI.Generator.Models;
-using Pulse.Library.Core.CLI;
-using Pulse.Library.Core.CLI.Exceptions;
+﻿using Pulse.Library.CLI.Generator.Exceptions;
 
 namespace Pulse.Library.CLI.Generator;
 
 public static class Program
 {
-    private static string id;
+    private static string id = "";
 
     public static void Main(string[] args)
     {
-        
     }
 
     public static async Task MainAsync(string[] args)
     {
         try
         {
-
         }
         catch (Exception ex)
         {
             Environment.ExitCode = DetermineErrorCodeAndLog(ex);
-            // Sleep for 10 seconds after failure, to ensure the logs are available
-            // in the pipeline running the updater job pod
+            /// Sleep for 10 seconds after failure, to ensure the logs are available
+            /// in the pipeline running the updater job pod
             Thread.Sleep(10000);
         }
     }
-    
+
     private static int DetermineErrorCodeAndLog(Exception ex)
     {
         if (ex is ApiException apiException &&
@@ -44,9 +40,15 @@ public static class Program
         Log($"Terminated without completing update: {ex}");
         return ExitCodes.UnspecifiedError;
     }
-    
+
     private static void Log(string s)
     {
         Console.WriteLine($"[{id}] {DateTime.UtcNow}: {s}");
     }
+}
+
+internal static class ExitCodes
+{
+    public static int UnspecifiedError = 1;
+    public static int DisruptiveSchemaChanges = 10;
 }

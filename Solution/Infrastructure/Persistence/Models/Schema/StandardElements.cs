@@ -10,12 +10,12 @@ namespace Database.Models.Schema
     
     public static class StandardElements
     {
-        // Entities
+        /// Entities
         public static readonly string FlightLeg = "flight_leg";
         public static readonly string GroundLeg = "ground_leg";
         public static readonly string Visit = "visit";
 
-        // Visit attributes
+        /// Visit attributes
         public static readonly string LinkedDueTo = "linked_due_to";
         public static readonly string Priority = "priority";
 
@@ -29,8 +29,8 @@ namespace Database.Models.Schema
             {
                 { FlightLeg, StringValues.Empty },
                 { GroundLeg, StringValues.Empty },
-                // Enable as standard elements when updated to a compliant schema
-                //{ Visit, new [] { LinkedDueTo, Priority } }
+                /// Enable as standard elements when updated to a compliant schema
+                ///{ Visit, new [] { LinkedDueTo, Priority } }
                 { Visit, StringValues.Empty }
             });
     }

@@ -22,13 +22,13 @@ namespace Service.Schema.Exceptions
             Parameters = parameters ?? new Dictionary<string, object>();
         }
 
-        // This protected constructor is used for deserialization.
+        /// This protected constructor is used for deserialization.
         protected SchemaValidationException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
 
-        // GetObjectData performs a custom serialization.
+        /// GetObjectData performs a custom serialization.
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info,
             StreamingContext context)

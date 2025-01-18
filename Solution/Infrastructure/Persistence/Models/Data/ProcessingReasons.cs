@@ -13,15 +13,15 @@ namespace Database.Models.Data
     [Flags]
     public enum ProcessingReasons
     {
-        None                = 0b_0000_0000_0000, // 0
-        BusinessRulesUpdate = 0b_0000_0000_0010, // 2
-        MasterdataUpdate    = 0b_0000_0000_1000, // 8 
-        RuleTrigger         = 0b_0000_0010_0000, // 32
-        Scheduled           = 0b_0000_0100_0000, // 64
+        None                = 0b_0000_0000_0000, /// 0
+        BusinessRulesUpdate = 0b_0000_0000_0010, /// 2
+        MasterdataUpdate    = 0b_0000_0000_1000, /// 8 
+        RuleTrigger         = 0b_0000_0010_0000, /// 32
+        Scheduled           = 0b_0000_0100_0000, /// 64
 
         
         /// The update to the entity is of priority (e.g., inside operational window)
         
-        Priority       = 0b_0001_0000_0000_0000, // 4096
+        Priority       = 0b_0001_0000_0000_0000, /// 4096
     }
 }

@@ -26,9 +26,9 @@ internal class EntityTypeCopier : IEntityTypeCopier
 
     public void CopyInto(EntityType source, EntityType target)
     {
-        // Clear these as new input is authorative and old information should just be discarded.
-        // Note: It may improve performance to compare indexes/constraints so that the later updates
-        // only have to take changes into account.
+        /// Clear these as new input is authorative and old information should just be discarded.
+        /// Note: It may improve performance to compare indexes/constraints so that the later updates
+        /// only have to take changes into account.
         target.Indexes.Clear();
         target.UniqueConstraints.Clear();
 
@@ -49,7 +49,7 @@ internal class EntityTypeCopier : IEntityTypeCopier
             attributeTypeCopier.CopyInto(attribute, targetAttribute);
         }
 
-        // Update/add actions
+        /// Update/add actions
         foreach (var action in source.Actions)
         {
             var targetAction = target.Actions
@@ -64,7 +64,7 @@ internal class EntityTypeCopier : IEntityTypeCopier
             }
         }
 
-        // Archive actions that are no longer present in new schema version
+        /// Archive actions that are no longer present in new schema version
         foreach (var action in target.Actions)
         {
             var sourceAction = source.Actions

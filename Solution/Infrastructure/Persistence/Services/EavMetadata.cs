@@ -59,7 +59,7 @@ internal class EavMetadata
         private static void DetermineVisitEnrichmentDirection(
             EntityValue ev, Database.Models.Data.Json.EntityAttributeValue eav, EavMetadata edm)
         {
-            // Specifically for flightlegs, determine if attribute was created in context of either inbound or outbound visit.
+            /// Specifically for flightlegs, determine if attribute was created in context of either inbound or outbound visit.
             FlightLeg? evAsFlightLeg = ev as FlightLeg;
             edm.VisitEnrichmentAsInbound = (eav.Enrichment != null &&
                                             eav.Enrichment.EnrichmentContextId == evAsFlightLeg?.VisitAsInbound?.Id);
@@ -70,7 +70,7 @@ internal class EavMetadata
         private static void DetermineVisitEnrichmentDirection(
             EntityValue ev, Database.Models.Data.Json.EntityAttributeResetMarker resetMarker, EavMetadata edm)
         {
-            // Specifically for flightlegs, determine if attribute was created in context of either inbound or outbound visit.
+            /// Specifically for flightlegs, determine if attribute was created in context of either inbound or outbound visit.
             FlightLeg? evAsFlightLeg = ev as FlightLeg;
             edm.VisitEnrichmentAsInbound = (resetMarker.EnrichmentContextId == evAsFlightLeg?.VisitAsInbound?.Id);
             edm.VisitEnrichmentAsOutbound = (resetMarker.EnrichmentContextId == evAsFlightLeg?.VisitAsOutbound?.Id);

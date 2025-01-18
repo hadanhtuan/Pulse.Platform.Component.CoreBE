@@ -139,9 +139,9 @@ namespace Database.Models.Data
             }
         }
 
-        // This holds a reference to all raw messages that have ever modified an instance of an EntityValue
-        // The reference is in this class instead of the RawMessage due to EF Core configuration to keep
-        // LastModifiedBY and ModifiedBy as separate relations.
+        /// This holds a reference to all raw messages that have ever modified an instance of an EntityValue
+        /// The reference is in this class instead of the RawMessage due to EF Core configuration to keep
+        /// LastModifiedBY and ModifiedBy as separate relations.
         [Obsolete(
             "Included to be able to read old rows from the database. For all updates to data, the new JsonState storage model should be used instead.")]
         public virtual ICollection<RawMessage> ModifiedBy
@@ -276,13 +276,13 @@ namespace Database.Models.Data
                     return stateFromJson;
                 }
 
-                // Initialize Json field if it has content
+                /// Initialize Json field if it has content
                 if (JsonValue != null)
                 {
                     stateFromJson = JsonSerializer.Deserialize<Json.EntityValue>(JsonValue, jsonSerializerOptions);
                     if (stateFromJson != null)
                     {
-                        // Inject EntityType from Schema into Json object model.
+                        /// Inject EntityType from Schema into Json object model.
                         stateFromJson.EntityType = GetCachedEntityType();
                         return stateFromJson;
                     }
@@ -294,8 +294,8 @@ namespace Database.Models.Data
 
                 stateFromJson = new(GetCachedEntityType(), this.Id);
 
-                // Initialize from relational storage for automatic; migration of old records
-                // Do not convert from relational for newly created objects
+                /// Initialize from relational storage for automatic; migration of old records
+                /// Do not convert from relational for newly created objects
                 if (!isNewlyCreated)
                 {
                     PopulateJsonFromRelationalModel(stateFromJson);
@@ -359,7 +359,7 @@ namespace Database.Models.Data
 
         private void PopulateJsonFromRelationalModel(Json.EntityValue jsonEntityValue)
         {
-#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 /// Type or member is obsolete
 
             isCurrentlyMigratingToJson = true;
 
@@ -367,7 +367,7 @@ namespace Database.Models.Data
 
             List<EntityAttributeValue> filteredAttributes = GetResetFilteredEntityAttributeValues();
 
-            // Add raw messages with their associated MessageEntityAttributeValues
+            /// Add raw messages with their associated MessageEntityAttributeValues
             var relatedRawMessages = ModifiedBy
                 .Union(filteredAttributes.OfType<MessageEntityAttributeValue>().Select(meav => meav.RawMessage))
                 .Distinct()
@@ -384,7 +384,7 @@ namespace Database.Models.Data
                     isConversionFromRelationalModel: true);
             }
 
-            // Add enrichment attribute values
+            /// Add enrichment attribute values
             var enrichmentEavs = filteredAttributes.OfType<EnrichmentEntityAttributeValue>()
                 .OrderBy(eav => eav.Received);
             foreach (var eav in enrichmentEavs)
@@ -392,7 +392,7 @@ namespace Database.Models.Data
                 jsonEntityValue.AddAttributeEnrichmentValue(eav);
             }
 
-            // Add a dummy reset marker to match the updates with null values that these cause in query model
+            /// Add a dummy reset marker to match the updates with null values that these cause in query model
             foreach (var eeav in GetActiveResetFilters())
             {
                 jsonEntityValue.GetAttribute(eeav.AttributeType.InternalName).ResetMarkers
@@ -404,7 +404,7 @@ namespace Database.Models.Data
 
             foreach (Json.EntityAttribute attr in jsonEntityValue.Attributes)
             {
-                // Reload attributes to set Previous values and re-sort due to modified ValueOrMetadataLastChanged
+                /// Reload attributes to set Previous values and re-sort due to modified ValueOrMetadataLastChanged
                 attr.Values = attr.Values.ToList();
 
                 if (attr.Best != null)
@@ -415,7 +415,7 @@ namespace Database.Models.Data
 
             isCurrentlyMigratingToJson = false;
 
-#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 /// Type or member is obsolete
         }
 
         [Obsolete(

@@ -51,12 +51,12 @@ internal class IndexesValidator : IIndexesValidator
     }
 
     public IEnumerable<AddedIndex> GetAddedIndexes(EntityType newEntityType, EntityType existingEntityType) =>
-        // Disregard names and check for similar column definitions
+        /// Disregard names and check for similar column definitions
         newEntityType.Indexes.Where(i => !existingEntityType.Indexes.Any(ei => i.Columns == ei.Columns))
             .Select(x => new AddedIndex(newEntityType, x));
 
     public IEnumerable<RemovedIndex> GetRemovedIndexes(EntityType newEntityType, EntityType existingEntityType) =>
-        // Disregard names and check for similar column definitions
+        /// Disregard names and check for similar column definitions
         existingEntityType.Indexes.Where(i => !newEntityType.Indexes.Any(ei => i.Columns == ei.Columns))
             .Select(x => new RemovedIndex(newEntityType, x));
 }

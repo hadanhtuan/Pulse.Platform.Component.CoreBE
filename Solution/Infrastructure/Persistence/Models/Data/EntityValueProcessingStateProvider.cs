@@ -38,7 +38,7 @@ namespace Database.Models.Data
                    ?? Create(entityValue.Id);
         }
 
-        // For entity types that should never be recalculated, create a blank state that is never persisted
+        /// For entity types that should never be recalculated, create a blank state that is never persisted
         private EntityValueProcessingState? GetForEntityTypeWithoutProcessingStateOrNull(EntityValue entityValue) =>
             entityTypesWithoutProcessingState.Contains(entityValue.EntityType.InternalName)
                 ? new() { EntityValueId = entityValue.Id, ProcessingStatus = ProcessingStatus.Processed }

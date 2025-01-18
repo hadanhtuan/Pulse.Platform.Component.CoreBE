@@ -49,8 +49,8 @@ public class EntityAttribute
     [JsonInclude]
     public string AttributeTypeInternalName { get; private set; }
 
-    // Internal values list is sorted by status, priority, credibility and finally created/received datetime.
-    // SortedDictionary performs best for our use where we insert values one at a time
+    /// Internal values list is sorted by status, priority, credibility and finally created/received datetime.
+    /// SortedDictionary performs best for our use where we insert values one at a time
     private readonly SortedList<EntityAttributeValue, EntityAttributeValue> sortedValues
         = new(Comparer<EntityAttributeValue>.Create((v2, v1) =>
         {
@@ -62,11 +62,11 @@ public class EntityAttribute
 
             if (result == 0)
             {
-                // For messages, use Received for sorting, for Enrichments use Created
+                /// For messages, use Received for sorting, for Enrichments use Created
                 result = (v1.Message?.RawMessage.Received ?? v1.Created)
                     .CompareTo(v2.Message?.RawMessage.Received ?? v2.Created);
-                // In case two values have the same comparison value, always use Created
-                // (as some RawMessages have the same Received field).
+                /// In case two values have the same comparison value, always use Created
+                /// (as some RawMessages have the same Received field).
                 if (result == 0)
                 {
                     result = v1.Created.CompareTo(v2.Created);
@@ -143,7 +143,7 @@ public class EntityAttribute
                 .Where(v => v.Enrichment != null && enrichmentContextFilter(v.Enrichment.EnrichmentContextId));
         }
 
-        // Mark as Archived in case removed attributes are referenced from other (active) attributes
+        /// Mark as Archived in case removed attributes are referenced from other (active) attributes
         enrichmentValuesToRemove.ToList().ForEach(v =>
         {
             Remove(v);
@@ -168,7 +168,7 @@ public class EntityAttribute
     {
         EntityAttributeValue eav = new(AttributeType, id, value, status, new EntityAttributeMessageValue(rawMessage));
 
-        // For system messages, we only store the most recently received value of each attribute per source/message type
+        /// For system messages, we only store the most recently received value of each attribute per source/message type
         if (rawMessage.SystemMessage != null)
         {
             EntityAttributeValue? existingEav
@@ -178,18 +178,18 @@ public class EntityAttribute
 
             if (existingEav?.Message?.RawMessage?.Received > rawMessage.Received)
             {
-                return existingEav; // Do not add older values than we already have
+                return existingEav; /// Do not add older values than we already have
             }
 
             if (existingEav?.Message?.RawMessage?.Received <= rawMessage.Received)
             {
-                // Keep ValueOrMetadataLastChanged from existing if we receive the same value
+                /// Keep ValueOrMetadataLastChanged from existing if we receive the same value
                 if (eav.ValueEquals(existingEav))
                 {
                     eav.ValueOrMetadataLastChanged = existingEav.ValueOrMetadataLastChanged;
                 }
 
-                Remove(existingEav); // Remove the older value
+                Remove(existingEav); /// Remove the older value
             }
         }
 
@@ -202,7 +202,7 @@ public class EntityAttribute
     /// Adds a new <see cref="EntityAttributeValue"/> with enrichment details.
     
     /// <param name="value"></param>
-#pragma warning disable S107 // Methods should not have too many parameters
+#pragma warning disable S107 /// Methods should not have too many parameters
     public EntityAttributeValue AddEnrichmentValue(
         Guid id,
         object? value,
@@ -215,15 +215,15 @@ public class EntityAttribute
         IEnumerable<EntityAttributeValue>? attributeReferences = null,
         EntityAttributeStatus status = EntityAttributeStatus.Active,
         bool isAbsent = false)
-#pragma warning restore S107 // Methods should not have too many parameters
+#pragma warning restore S107 /// Methods should not have too many parameters
     {
-        // Recurse through archived references to get a possible active reference at the bottom.
-        // This behaviour is inherited from relational model.
-        // Note that this is Lazily invoked. In other words, accessing attributeReferences
-        // on the created enrichment will dynamically update if any references are modified.
+        /// Recurse through archived references to get a possible active reference at the bottom.
+        /// This behaviour is inherited from relational model.
+        /// Note that this is Lazily invoked. In other words, accessing attributeReferences
+        /// on the created enrichment will dynamically update if any references are modified.
         attributeReferences = attributeReferences?
             .Select(RecurseThroughArchivedEnrichments)
-            .OfType<EntityAttributeValue>(); // removes null values
+            .OfType<EntityAttributeValue>(); /// removes null values
 
         EntityAttributeValue eav = new(AttributeType, id, value, created, status,
             new EntityAttributeEnrichmentValue(
@@ -290,7 +290,7 @@ public class EntityAttribute
         foreach (var eav in eavs.ToList())
         {
             sortedValues.Remove(eav);
-            // The returned eav is a copy to avoid updating previous values.
+            /// The returned eav is a copy to avoid updating previous values.
             var deletedEav = eav.Delete(message);
             sortedValues.Add(deletedEav, deletedEav);
         }
@@ -431,10 +431,10 @@ public class EntityAttribute
         internal set { previousBestValueLastChanged = value; }
     }
 
-    // Will be UtcNow first time an EntityAttribute is created, but always be deserialized from Json afterwards.
+    /// Will be UtcNow first time an EntityAttribute is created, but always be deserialized from Json afterwards.
     private DateTime previousBestValueLastChanged = DateTime.UtcNow;
 
-    // Used to return the same UtcNow in case there are several calls to BestValueLastChanged
+    /// Used to return the same UtcNow in case there are several calls to BestValueLastChanged
     private readonly DateTime now = DateTime.UtcNow;
 
     

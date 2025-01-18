@@ -23,7 +23,7 @@ internal class GenericTypeSqlUpdateBuilder : IGenericTypeSqlUpdateBuilder
 
     public IEnumerable<SqlUpdate> ToSqlUpdates(IModification modification)
     {
-        // Use reflection to find builder for the type of modification
+        /// Use reflection to find builder for the type of modification
         object builder = GetInstanceOfSpecificType(typeof(ISqlUpdateBuilder<>), modification.GetType()) ??
                          throw new SqlUpdateBuilderTypeNotFoundException(
                              $"No implementation of ISqlUpdateBuilder<> found for {modification.GetType()}");
@@ -41,9 +41,9 @@ internal class GenericTypeSqlUpdateBuilder : IGenericTypeSqlUpdateBuilder
 
         if (instance == null)
         {
-            // Try parent types of modificationType
+            /// Try parent types of modificationType
             instance = modificationType.GetParentTypes()
-                // Do not use generic composed modification builder
+                /// Do not use generic composed modification builder
                 .Where(t => !t.Equals(typeof(ICompositeModification)))
                 .Select(t => TryGetInstanceOfSpecificType(genericType, t))
                 .FirstOrDefault(t => t is not null);

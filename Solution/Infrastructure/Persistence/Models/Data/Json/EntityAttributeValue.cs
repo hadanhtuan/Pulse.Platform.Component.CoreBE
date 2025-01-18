@@ -244,7 +244,7 @@ namespace Database.Models.Data.Json
             switch (AttributeType)
             {
                 case ComplexAttributeType _:
-                    // NewtonSoft is used as MS .Net library cannot handle the generic polymorphic type hierarchy
+                    /// NewtonSoft is used as MS .Net library cannot handle the generic polymorphic type hierarchy
                     Json = (value == null) ? null : (value as string) ?? Newtonsoft.Json.JsonConvert.SerializeObject(value);
                     return;
                 case ValueAttributeType valueAttributeType:
@@ -315,9 +315,9 @@ namespace Database.Models.Data.Json
         /// <param name="message"></param>
         internal EntityAttributeValue Delete(Data.RawMessage message)
         {
-            // Make a shallow copy as we need to distinguish the Status field between
-            // the previous EAV and this now deleted EAV. Otherwise, the previous value would
-            // be the exact same reference as this and have its status updated as well.
+            /// Make a shallow copy as we need to distinguish the Status field between
+            /// the previous EAV and this now deleted EAV. Otherwise, the previous value would
+            /// be the exact same reference as this and have its status updated as well.
             var deletedEav = (EntityAttributeValue)this.MemberwiseClone();
             deletedEav.Status = EntityAttributeStatus.Deleted;
             deletedEav.ValueOrMetadataLastChanged = System.DateTime.UtcNow;
@@ -431,7 +431,7 @@ namespace Database.Models.Data.Json
             {
                 return aodbRef.Message != null
                     ? ToSourceName(aodbRef.Message)
-                    // Enrichment with another enrichment of same attribute
+                    /// Enrichment with another enrichment of same attribute
                     : "AODB";
             }
             return Enrichment.MasterDataReferences.Any() ? "Masterdata" : "AODB";

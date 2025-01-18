@@ -6,7 +6,7 @@ namespace Service.Schema.Service.Validation;
 /// <inheritdoc cref="IStandardSchemaValidator"/>
 public class StandardSchemaValidator : IStandardSchemaValidator
 {
-    // Exposed internally for testing
+    /// Exposed internally for testing
     internal IDictionary<string, IEnumerable<string>> StandardEntityAttributeTypes { get; set; } =
         StandardElements.EntityAttributeTypes;
 

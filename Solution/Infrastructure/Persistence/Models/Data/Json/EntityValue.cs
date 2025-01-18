@@ -342,8 +342,8 @@ namespace Database.Models.Data.Json
 
             if (actionValueToPrioritize != null)
             {
-                // Add an enrichment that prioritizes the Action (UI) value with the same priority and a newer
-                // created date so that it is 'better' than the enrichment that was just added.
+                /// Add an enrichment that prioritizes the Action (UI) value with the same priority and a newer
+                /// created date so that it is 'better' than the enrichment that was just added.
                 attribute.AddEnrichmentValue(
                     Guid.NewGuid(),
                     actionValueToPrioritize.GetValue(),
@@ -356,10 +356,10 @@ namespace Database.Models.Data.Json
                     new EntityAttributeValue[] { actionValueToPrioritize });
             }
 
-            // Everytime a new enrichment is created referencing UI input, ensure only relevant enrichments are kept
+            /// Everytime a new enrichment is created referencing UI input, ensure only relevant enrichments are kept
             if (actionValueToPrioritize != null || value.HasReferenceToEntityAttributeValueFromActionMessage)
             {
-                // Ensure that there is only one Action/UI prioritization (the highest)
+                /// Ensure that there is only one Action/UI prioritization (the highest)
                 List<EntityAttributeValue> irrelevantActionPrioritizations =
                     attribute.Values
                         .Where(a => a.HasReferenceToEntityAttributeValueFromActionMessage)
@@ -381,9 +381,9 @@ namespace Database.Models.Data.Json
             EntityAttributeValue value)
         {
             if (value.Status != EntityAttributeStatus.Active
-                // Do not add prioritized UI value if the enrichment value itself has lower priority than messages
+                /// Do not add prioritized UI value if the enrichment value itself has lower priority than messages
                 || value.Enrichment?.Priority < 0
-                // Do not add prioritized UI value for enrichments of UI values
+                /// Do not add prioritized UI value for enrichments of UI values
                 || value.HasReferenceToEntityAttributeValueFromActionMessage)
             {
                 return null;
@@ -476,13 +476,13 @@ namespace Database.Models.Data.Json
                 if (matchingExistingAlert.AlertStatus == AlertStatus.Active &&
                     matchingExistingAlert.AlertLevel > newAlert.AlertLevel)
                 {
-                    // Do not add a duplicate alert with lower alert level - simply leave the old one
+                    /// Do not add a duplicate alert with lower alert level - simply leave the old one
                     return matchingExistingAlert;
                 }
 
-                // Reactivate the old alert (if necessary) 
+                /// Reactivate the old alert (if necessary) 
                 matchingExistingAlert.SetAlertStatus(AlertStatus.Active);
-                // Update relevant metadata based on the latest SetAlert information from business rules
+                /// Update relevant metadata based on the latest SetAlert information from business rules
                 matchingExistingAlert.AlertLevel = newAlert.AlertLevel;
                 matchingExistingAlert.AlertTypeDescription = newAlert.AlertTypeDescription;
                 matchingExistingAlert.CausedBy = newAlert.CausedBy;

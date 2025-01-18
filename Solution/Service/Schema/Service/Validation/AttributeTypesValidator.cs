@@ -61,14 +61,14 @@ internal class AttributeTypesValidator : IAttributeTypesValidator
     /// <param name="oldEntityType"></param>
     private static void ValidateValueAttributeTypes(EntityType newEntityType, EntityType oldEntityType)
     {
-        // validate only value attribute types for which data type may have changed
+        /// validate only value attribute types for which data type may have changed
         var valueAttributeTypes = newEntityType.AttributeTypes.OfType<ValueAttributeType>();
 
         foreach (var attribute in valueAttributeTypes)
         {
             var oldAttributeType =
                 oldEntityType.AttributeTypes.FirstOrDefault(a => a.InternalName == attribute.InternalName);
-            // We don't check new attribute types
+            /// We don't check new attribute types
             if (oldAttributeType == null!)
             {
                 continue;
@@ -110,7 +110,7 @@ internal class AttributeTypesValidator : IAttributeTypesValidator
         {
             var oldAttributeType =
                 oldEntityType.AttributeTypes.FirstOrDefault(a => a.InternalName == attribute.InternalName);
-            // We don't check new attribute types
+            /// We don't check new attribute types
             if (oldAttributeType == null!)
             {
                 continue;

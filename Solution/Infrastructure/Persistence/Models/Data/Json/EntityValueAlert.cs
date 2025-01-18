@@ -37,8 +37,8 @@ namespace Database.Models.Data.Json
                         
             if (!isExistingAlert)
             {
-                // For new alerts, this marks them with AlertStatusHasChanged
-                // (unless they are inactivated before saving them)
+                /// For new alerts, this marks them with AlertStatusHasChanged
+                /// (unless they are inactivated before saving them)
                 previousLastChangedState = DateTime.UtcNow;
             }
         }

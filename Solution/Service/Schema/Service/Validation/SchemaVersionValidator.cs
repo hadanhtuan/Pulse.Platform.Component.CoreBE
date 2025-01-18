@@ -76,7 +76,7 @@ internal class SchemaVersionValidator : ISchemaVersionValidator
         }
         catch (ArgumentException ex)
         {
-            // C# ToDictionary throws this exception only on duplicate key
+            /// C# ToDictionary throws this exception only on duplicate key
             var split = ex.Message.Split("Key: ");
             var duplicateKey = split.Length > 1 ? split[1] : "undetermined";
             throw new SchemaHasDuplicateEntityTypeException(duplicateKey);

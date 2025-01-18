@@ -60,9 +60,9 @@ public class EntityAttributeEnrichmentValue : EnrichmentValueBase
     [JsonInclude]
     public IEnumerable<EntityAttributeValue> AttributeReferences
     {
-        // Never return archiced references as these are deleted from attribute value collections and not used once they are archived.
-        // This behaviour is inherited from relational model.
-        // Also, do not return attributes without AttributeType as these are not attributes inside the current EntityValue.
+        /// Never return archiced references as these are deleted from attribute value collections and not used once they are archived.
+        /// This behaviour is inherited from relational model.
+        /// Also, do not return attributes without AttributeType as these are not attributes inside the current EntityValue.
         get => attributeReferences.Where(attr =>
             attr.Status != EntityAttributeStatus.Archived && attr.AttributeType != null);
         private set
@@ -86,8 +86,8 @@ public class EntityAttributeEnrichmentValue : EnrichmentValueBase
     {
         var aodbRef = AttributeReferences.FirstOrDefault();
 
-        // As we only output one AODB reference (not nested), we recursively dig down to the lowest
-        // attribute reference to get to a possible system message (through possible prioritizations).
+        /// As we only output one AODB reference (not nested), we recursively dig down to the lowest
+        /// attribute reference to get to a possible system message (through possible prioritizations).
         while (aodbRef?.Enrichment?.AttributeReferences.Any() == true)
         {
             aodbRef = aodbRef.Enrichment.AttributeReferences.First();

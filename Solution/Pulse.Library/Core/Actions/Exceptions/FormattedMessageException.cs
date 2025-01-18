@@ -28,13 +28,13 @@ namespace Pulse.Library.Core.Actions.Exceptions
             StatusCode = statusCode;
         }
 
-        // This protected constructor is used for deserialization.
+        /// This protected constructor is used for deserialization.
         protected FormattedMessageException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
 
-        // GetObjectData performs a custom serialization.
+        /// GetObjectData performs a custom serialization.
         public override void GetObjectData(SerializationInfo info,
             StreamingContext context)
         {

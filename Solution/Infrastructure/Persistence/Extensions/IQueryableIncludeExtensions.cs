@@ -32,7 +32,7 @@ public static class IQueryableIncludeExtensions
         where TEntity : class
         where TProperty : EntityValue
     {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8602 /// Dereference of a possibly null reference.
         return source
             .Include(navigationPropertyPath).ThenInclude(ev => ev.ModifiedBy)
             .Include(navigationPropertyPath).ThenInclude(ev => ev.EntityAttributeValues)
@@ -42,7 +42,7 @@ public static class IQueryableIncludeExtensions
             .Include(navigationPropertyPath).ThenInclude(ev => ev.EntityAttributeValues)
             .ThenInclude(eav => ((EnrichmentEntityAttributeValue)eav).AodbSource)
             .AsSplitQuery();
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning restore CS8602 /// Dereference of a possibly null reference.
     }
 
 
