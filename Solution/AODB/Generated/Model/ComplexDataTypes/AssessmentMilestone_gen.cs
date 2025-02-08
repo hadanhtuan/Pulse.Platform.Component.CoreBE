@@ -12,6 +12,26 @@ public class AssessmentMilestone
 {
 
     /// <summary>
+    /// Name of the gate that this milestone is set for, determining the roles that should be notified.
+    /// </summary>
+    public required string Gate { get; set; }
+
+    /// <summary>
+    /// Internal System Name of milestone for lookup in master data
+    /// </summary>
+    public required string InternalSystemName { get; set; }
+
+    /// <summary>
+    /// Name of milestone
+    /// </summary>
+    public required string Name { get; set; }
+
+    /// <summary>
+    /// Comma-separated list of users that have been sent a notification (or empty if no notification has been sent).
+    /// </summary>
+    public required string UsersNotified { get; set; }
+
+    /// <summary>
     /// Whether work on the gate or phase has been completed.
     /// </summary>
     public bool? Completed { get; set; }
@@ -26,28 +46,8 @@ public class AssessmentMilestone
     /// </summary>
     public DateTime? DeadlineUpdated { get; set; }
 
-    /// <summary>
-    /// Name of the gate that this milestone is set for, determining the roles that should be notified.
-    /// </summary>
-    public string? Gate { get; set; }
-
-    /// <summary>
-    /// Internal System Name of milestone for lookup in master data
-    /// </summary>
-    public string? InternalSystemName { get; set; }
-
-    /// <summary>
-    /// Name of milestone
-    /// </summary>
-    public string? Name { get; set; }
-
-    /// <summary>
-    /// Comma-separated list of users that have been sent a notification (or empty if no notification has been sent).
-    /// </summary>
-    public string? UsersNotified { get; set; }
-
-        public bool ValueIsEmpty()
-        {
-            return Completed == null && Deadline == null && DeadlineUpdated == null && Gate == null && InternalSystemName == null && Name == null && UsersNotified == null;
-        }
+    public bool ValueIsEmpty()
+    {
+        return Completed == null && Deadline == null && DeadlineUpdated == null && Gate == null && InternalSystemName == null && Name == null && UsersNotified == null;
+    }
 }

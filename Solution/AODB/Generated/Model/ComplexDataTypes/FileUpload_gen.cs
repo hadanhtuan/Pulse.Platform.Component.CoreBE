@@ -30,8 +30,8 @@ public class FileUpload
     /// </summary>
     public string? FullFileName { get; set; }
 
-        public bool ValueIsEmpty()
-        {
-            return CreatedDate == null && FileName == null && FileReference == null && FullFileName == null;
-        }
+    public bool ValueIsEmpty()
+    {
+        return CreatedDate == null && FileName == null && FileReference == null && FullFileName == null;
+    }
 }

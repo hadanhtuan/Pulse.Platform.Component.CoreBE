@@ -1,4 +1,3 @@
-using OpenTelemetry.Trace;
 using Pulse.Library.Common.Extensions;
 using Pulse.Library.Core.Schema;
 using System.Text;
@@ -28,7 +27,6 @@ public class AodbCodeGenerator
 
         if (otherUsingStatements is not null)
         {
-
             foreach (var statement in otherUsingStatements)
             {
                 usingStmt += $"{Environment.NewLine}using {statement};";
@@ -53,65 +51,12 @@ public class AodbCodeGenerator
         return usingStmt;
     }
 
-    public string GenerateAttributeGetAndSet(EntityType entity,
-          bool hideInheritedProperty = false,
-          bool initializeValue = false,
-          bool useComplexAttributeInputWrapper = false,
-          bool useComplexJsonConverterAnnotation = false)
-    {
-        var newStr = hideInheritedProperty ? "new " : "";
-
-        var attributeStringBuilder = new StringBuilder();
-        foreach (var attribute in entity.AttributeTypes)
-        {
-            var attributeType = attribute.GetAttributeDataType();
-            attributeStringBuilder.AppendLine(InsertDescription(attribute.Description));
-            attributeStringBuilder.AppendLine(
-                CreateObsoleteAnnotation(attribute) +
-                $"    public {newStr}{attributeType}? {attribute.InternalName.CamelCaseAndRemoveUnderscore()} " +
-                $"{{ get; set; }}");
-        }
-
-        foreach (var attribute in entity.ComplexAttributeTypes)
-        {
-            var attributeType = attribute.GetAttributeDataType();
-
-            var initialize = "";
-            if (initializeValue)
-            {
-                var implType = attribute.GetAttributeDataType();
-                var initializeAttribute = $"new {implType}()";
-                if (useComplexAttributeInputWrapper)
-                {
-                    initializeAttribute = @$"new ComplexAttributeInput<{attributeType}> (
-                {initializeAttribute})";
-                }
-                initialize = @$"
-            = {initializeAttribute};";
-            }
-
-            if (useComplexAttributeInputWrapper)
-            {
-                attributeType = $"IComplexAttributeInput<{attributeType}>";
-            }
-
-            attributeStringBuilder.AppendLine(InsertDescription(attribute.Description));
-            attributeStringBuilder.AppendLine(
-                CreateObsoleteAnnotation(attribute) +
-                CreateComplexAttributeJsonConverterAnnotation(useComplexJsonConverterAnnotation, attributeType, attribute.GetAttributeDataType()) +
-                $"    public {newStr}{attributeType} {attribute.InternalName.CamelCaseAndRemoveUnderscore()} " +
-                $"{{ get; set; }} {initialize}");
-        }
-        return attributeStringBuilder.ToString();
-    }
-
-    public Dictionary<string, string> CreateEntityImplementation(SchemaVersion schema)
+    public Dictionary<string, string> CreateEntities(SchemaVersion schema)
     {
         Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
         foreach (var entity in schema.EntityTypes)
         {
             var attributes = GenerateAttributes(entity);
-
 
             var entityName = entity.InternalName.CamelCaseAndRemoveUnderscore();
             string entityImplementationTemplate =@$"
@@ -177,7 +122,7 @@ public class {entityName} : Entity
     {
         var entityName = entity.InternalName.CamelCaseAndRemoveUnderscore();
 
-        var attributes = GenerateAttributeGetAndSet(entity, initializeValue: true, useComplexJsonConverterAnnotation: true);
+        var attributes = GenerateAttributes(entity);
         var valueIsReadOnlyImpl = GenerateValueIsEmptyMethod(entity);
 
         string entityTemplate =@$"
@@ -230,10 +175,10 @@ public class ComplexAttributeCollection<T>: Collection<T>
             booleanCheck = "true";
         }
 
-        return @$"        public bool ValueIsEmpty()
-        {{
-            return {booleanCheck};
-        }}";
+        return @$"    public bool ValueIsEmpty()
+    {{
+        return {booleanCheck};
+    }}";
     }
 
     private static bool HasSystemAttributes(EntityType entityType)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AODB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e50b4d2c052429586c8018d864eae89c1f530653")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cae6a8009a67d9d4e60d63b93d6dd99bcd60930e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AODB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AODB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

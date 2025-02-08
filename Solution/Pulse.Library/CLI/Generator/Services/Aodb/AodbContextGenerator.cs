@@ -30,7 +30,7 @@ public class AodbContextGenerator
         WriteToFile(
             contextPath,
             "Entities/",
-            aodbCodeGenerator.CreateEntityImplementation(schema)
+            aodbCodeGenerator.CreateEntities(schema)
         );
 
         // Generate complex datatypes

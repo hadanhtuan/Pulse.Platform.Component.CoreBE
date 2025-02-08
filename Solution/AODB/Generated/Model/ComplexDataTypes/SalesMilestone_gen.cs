@@ -12,6 +12,16 @@ public class SalesMilestone
 {
 
     /// <summary>
+    /// Unique externally given identifier of milestone.
+    /// </summary>
+    public required string Id { get; set; }
+
+    /// <summary>
+    /// Descriptive name of milestone.
+    /// </summary>
+    public required string Name { get; set; }
+
+    /// <summary>
     /// Deadline of the milestone.
     /// </summary>
     public DateTime? Deadline { get; set; }
@@ -22,22 +32,12 @@ public class SalesMilestone
     public DateTime? DeadlineUpdated { get; set; }
 
     /// <summary>
-    /// Unique externally given identifier of milestone.
-    /// </summary>
-    public string? Id { get; set; }
-
-    /// <summary>
     /// Is Actual
     /// </summary>
     public bool? IsActual { get; set; }
 
-    /// <summary>
-    /// Descriptive name of milestone.
-    /// </summary>
-    public string? Name { get; set; }
-
-        public bool ValueIsEmpty()
-        {
-            return Deadline == null && DeadlineUpdated == null && Id == null && IsActual == null && Name == null;
-        }
+    public bool ValueIsEmpty()
+    {
+        return Deadline == null && DeadlineUpdated == null && Id == null && IsActual == null && Name == null;
+    }
 }

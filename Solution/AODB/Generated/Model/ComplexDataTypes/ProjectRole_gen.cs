@@ -26,8 +26,8 @@ public class ProjectRole
     /// </summary>
     public string? Role { get; set; }
 
-        public bool ValueIsEmpty()
-        {
-            return Contact == null && Email == null && Role == null;
-        }
+    public bool ValueIsEmpty()
+    {
+        return Contact == null && Email == null && Role == null;
+    }
 }
