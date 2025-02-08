@@ -1,0 +1,2142 @@
+{
+    "note": null,
+    "version": 0,
+    "validFrom": "2024-01-01T00:00:00.000000",
+    "entityTypes": [
+        {
+            "displayName": "Project",
+            "internalName": "project",
+            "pluralName": "projects",
+            "description": "Project.",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [
+                {
+                    "name": "Project link id index",
+                    "columns": "link_id"
+                }
+            ],
+            "uniqueConstraints": [
+                {
+                    "displayName": "Unique Project Link Id",
+                    "description": "Link id of a project must be unique through out the solution",
+                    "internalName": "link_id_projects_unique",
+                    "columnExpressions": [
+                        {
+                            "columnExpression": "link_id"
+                        }
+                    ]
+                }
+            ],
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Opportunity Name",
+                    "longDisplayName": "Opportunity Name",
+                    "internalName": "name",
+                    "description": "Opportunity name of project",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "SP Number",
+                    "longDisplayName": "SP Number",
+                    "internalName": "sp_number",
+                    "description": "The number of the Sales Project",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Opportunity ID",
+                    "longDisplayName": "Opportunity ID",
+                    "internalName": "opportunity_id",
+                    "description": "ID of the opportunity",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Region",
+                    "longDisplayName": "World Region",
+                    "internalName": "world_region",
+                    "description": "Region of the world the project belongs to",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Country CRM",
+                    "longDisplayName": "Country CRM",
+                    "internalName": "country_crm",
+                    "description": "Country CRM",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "CRM Country Region",
+                    "longDisplayName": "CRM Country Region",
+                    "internalName": "crm_country_region",
+                    "description": "CRM Country Region",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Account Name",
+                    "longDisplayName": "Account Name",
+                    "internalName": "account_name",
+                    "description": "Account Name",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Project status",
+                    "longDisplayName": "Project status",
+                    "internalName": "project_status",
+                    "description": "The status of the project",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Site Center (GPS)",
+                    "longDisplayName": "Site Center (GPS)",
+                    "internalName": "site_center",
+                    "description": "Site Center (GPS)",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Distance to Shore",
+                    "longDisplayName": "Distance to Shore",
+                    "internalName": "distance_to_shore",
+                    "description": "The distance to the shore",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Distance to Shore Unit",
+                    "longDisplayName": "Distance to Shore Unit",
+                    "internalName": "distance_to_shore_unit",
+                    "description": "Unit for distance to shore [km or Nautical Miles]",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Link Id",
+                    "longDisplayName": "Link Id",
+                    "internalName": "link_id",
+                    "description": "Link id of a project",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Gate",
+                    "longDisplayName": "Gate",
+                    "internalName": "project_gate_name",
+                    "description": "Gate Name of a project",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                }
+            ],
+            "complexAttributeTypes": [
+                {
+                    "shortDisplayName": "Gates",
+                    "longDisplayName": "Gates",
+                    "internalName": "gates",
+                    "description": "List of gates and their progress",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "progress",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Pending Notifications",
+                    "longDisplayName": "Pending Notifications",
+                    "internalName": "pending_notifications",
+                    "description": "Notifications awaiting being sent regarding assiment of questions",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "question_assignment_notification_list",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Timeline",
+                    "longDisplayName": "Timeline",
+                    "internalName": "assessment_timeline",
+                    "description": "Milestones for the trade flow assessment project.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "assessment_milestone",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Sales Timeline",
+                    "longDisplayName": "Sales Timeline",
+                    "internalName": "sales_timeline",
+                    "description": "SalesProject timeline milestones.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "sales_milestone",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Roles",
+                    "longDisplayName": "Roles",
+                    "internalName": "roles",
+                    "description": "Users assigned different roles in the project.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Sales Manager",
+                    "longDisplayName": "Input Provider: Sales Manager",
+                    "internalName": "sales_managers",
+                    "description": "Users assigned the role Input Provider: Sales Manager.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Construction Manager",
+                    "longDisplayName": "Input Provider: Construction Manager",
+                    "internalName": "construction_managers",
+                    "description": "Users assigned the role Input Provider: Construction Manager.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Opportunity Team Names",
+                    "longDisplayName": "Opportunity Team Names",
+                    "internalName": "salesteam_names",
+                    "description": "Names for the sales team members assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Opportunity Team Emails",
+                    "longDisplayName": "Opportunity Team Emails",
+                    "internalName": "salesteam_emails",
+                    "description": "Emails for the sales team members assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Opportunity Team Roles",
+                    "longDisplayName": "Opportunity Team Roles",
+                    "internalName": "salesteam_roles",
+                    "description": "Role for the sales team members assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Opportunity Team Primary",
+                    "longDisplayName": "Opportunity Team Primary",
+                    "internalName": "salesteam_roles_primary",
+                    "description": "The boolean value for primary member role for the sales team users assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Project Manager",
+                    "longDisplayName": "Input Provider: Project Manager",
+                    "internalName": "project_managers",
+                    "description": "Users assigned the role Input Provider: Project Manager.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Tech Project",
+                    "longDisplayName": "Input Provider: Tech Project",
+                    "internalName": "tech_project_users",
+                    "description": "Users assigned the role Input Provider: Tech Project.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Tax / VAT Regional",
+                    "longDisplayName": "Solution Owner: Tax / VAT Regional",
+                    "internalName": "tax_vat_regional_users",
+                    "description": "Users assigned the role Solution Owner: Tax / VAT Regional.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Tax / VAT Global",
+                    "longDisplayName": "Solution Owner: Tax / VAT Global",
+                    "internalName": "tax_vat_global_users",
+                    "description": "Users assigned the role Solution Owner: Tax / VAT Global.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Customs",
+                    "longDisplayName": "Solution Owner: Customs",
+                    "internalName": "customs_users",
+                    "description": "Users assigned the role Solution Owner: Customs.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Transfer Pricing",
+                    "longDisplayName": "Solution Owner: Transfer Pricing",
+                    "internalName": "transfer_pricing",
+                    "description": "Users assigned the role Solution Owner: Transfer Pricing.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "SAP Architect",
+                    "longDisplayName": "SAP Architect",
+                    "internalName": "sap_architects",
+                    "description": "Users assigned the role SAP Architect.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "SAP Developer",
+                    "longDisplayName": "SAP Developers",
+                    "internalName": "sap_developers",
+                    "description": "Users assigned the role SAP Developer.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Proposal Submission Files",
+                    "longDisplayName": "Proposal Submission Files",
+                    "internalName": "proposal_submission_files",
+                    "description": "List of files attached to Proposal Submission gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Contracting / FOI Files",
+                    "longDisplayName": "Contracting / FOI Files",
+                    "internalName": "contracting_foi_files",
+                    "description": "List of files attached to Contracting / FOI Files gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Sales to Construction Files",
+                    "longDisplayName": "Sales to Construction Files",
+                    "internalName": "sales_to_construction_files",
+                    "description": "List of files attached to Sales to Construction gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Construction to Service Files",
+                    "longDisplayName": "Construction to Service Files",
+                    "internalName": "construction_to_service_files",
+                    "description": "List of files attached to Construction to Service gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "During Service Files",
+                    "longDisplayName": "During Service Files",
+                    "internalName": "during_service_files",
+                    "description": "List of files attached to During Service Files gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Opportunity Team",
+                    "longDisplayName": "Opportunity Team",
+                    "internalName": "opportunity_team",
+                    "description": "List of opportunity team members",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "opportunity_team_member",
+                    "isCollection": true,
+                    "updateAction": null
+                }
+            ],
+            "actions": [
+                {
+                    "internalName": "assign_assessment_milestones"
+                },
+                {
+                    "internalName": "assign_roles"
+                },
+                {
+                    "internalName": "assign_sales_milestones"
+                },
+                {
+                    "internalName": "project"
+                },
+                {
+                    "internalName": "create_questionnaire"
+                },
+                {
+                    "internalName": "map_sales_manager"
+                }
+            ]
+        },
+        {
+            "displayName": "Questionnaire",
+            "internalName": "questionnaire",
+            "pluralName": "questionnaires",
+            "description": "A questionnaire for a project.",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [
+                {
+                    "name": "Questionnaire link id index",
+                    "columns": "link_id"
+                },
+                {
+                    "name": "Parent project identifier",
+                    "columns": "project_id"
+                }
+            ],
+            "uniqueConstraints": [
+                {
+                    "displayName": "Unique Project Standard Gate Questionnaires",
+                    "description": "There can only be one active of each standard gate on a project",
+                    "internalName": "project_standard_gate_questionnaires_unique_version_three",
+                    "rowFilterExpression": "deleted IS NOT true and is_template IS NOT true and parent_questionnaire_link_id IS null and is_trade_assessment IS NOT true",
+                    "columnExpressions": [
+                        {
+                            "columnExpression": "project_id"
+                        },
+                        {
+                            "columnExpression": "gate"
+                        }
+                    ]
+                },
+                {
+                    "displayName": "Unique Questionnaire Link Id",
+                    "description": "Link id of a questionnaire must be unique through out the solution",
+                    "internalName": "link_id_questionnaires_unique",
+                    "rowFilterExpression": "deleted IS NOT true",
+                    "columnExpressions": [
+                        {
+                            "columnExpression": "link_id"
+                        }
+                    ]
+                }
+            ],
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Name",
+                    "longDisplayName": "Name",
+                    "internalName": "name",
+                    "description": "Name of questionnaire",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Description",
+                    "longDisplayName": "Description",
+                    "internalName": "description",
+                    "description": "Description of questionnaire",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Project",
+                    "longDisplayName": "Project",
+                    "internalName": "project_id",
+                    "description": "Reference to the project that this questionnaire belongs to. Empty if this is a template.",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Project name",
+                    "longDisplayName": "Project name",
+                    "internalName": "project_name",
+                    "description": "Name of the project that this questionnaire belongs to. Empty if this is a template.",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Gate",
+                    "longDisplayName": "Gate",
+                    "internalName": "gate",
+                    "description": "Gate of project that the questionnaire concerns",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Gate Display Name",
+                    "longDisplayName": "Gate Display Name",
+                    "internalName": "gate_display_name",
+                    "description": "The display name for overriding the default name of the gate",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Is Template",
+                    "longDisplayName": "Is Template",
+                    "internalName": "is_template",
+                    "description": "Whether this questionnaire is a template",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Is Draft",
+                    "longDisplayName": "Is Draft",
+                    "internalName": "is_draft",
+                    "description": "Whether a questionnaire is in draft mode",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Number of questions",
+                    "longDisplayName": "Number of questions",
+                    "internalName": "number_of_questions",
+                    "description": "Number of questions on questionnaire",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Integer"
+                },
+                {
+                    "shortDisplayName": "Deleted",
+                    "longDisplayName": "Deleted",
+                    "internalName": "deleted",
+                    "description": "Whether this questionnaire is deleted",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Link Id",
+                    "longDisplayName": "Link Id",
+                    "internalName": "link_id",
+                    "description": "Link id of a questionnaire",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Summary",
+                    "longDisplayName": "Summary",
+                    "internalName": "summary",
+                    "description": "Summary of a questionnaire",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Is Active",
+                    "longDisplayName": "Is Active",
+                    "internalName": "is_active",
+                    "description": "Status of a questionnaire",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Order",
+                    "longDisplayName": "Order",
+                    "internalName": "order",
+                    "description": "The ordinal position of an ad-hoc gate in the questionnaire.",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Integer"
+                },
+                {
+                    "shortDisplayName": "Parent Questionnaire",
+                    "longDisplayName": "Parent Questionnaire",
+                    "internalName": "parent_questionnaire_link_id",
+                    "description": "Parent questionnaire link id an ad-hoc gate based on or a linked trade assessment summary.",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Region",
+                    "longDisplayName": "World Region",
+                    "internalName": "world_region",
+                    "description": "Region of world the project belongs to (copy from parent for permission lookup)",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Default Assignee",
+                    "longDisplayName": "Default Assignee",
+                    "internalName": "default_assignee",
+                    "description": "Default assignee of questions on questionnaire",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Is trade assessment",
+                    "longDisplayName": "Is trade assessment",
+                    "internalName": "is_trade_assessment",
+                    "description": "Determine whether current questionnaire is a trade assessment or not",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                }
+            ],
+            "complexAttributeTypes": [
+                {
+                    "shortDisplayName": "Question Category",
+                    "longDisplayName": "Question Categories",
+                    "internalName": "question_categories",
+                    "description": "Ordered list of question categories, each with ordered list of questions",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "question_category_list",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{category}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{category}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Question Category Received",
+                    "longDisplayName": "Question Categories Received",
+                    "internalName": "question_categories_received",
+                    "description": "Ordered list of question categories, each with ordered list of questions received from source",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "question_category_list",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{category}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{category}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Phases",
+                    "longDisplayName": "Phases",
+                    "internalName": "phases",
+                    "description": "List of phases and their progress",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "progress",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Phase completion",
+                    "longDisplayName": "Phase completion",
+                    "internalName": "phase_completion",
+                    "description": "Completion of phase",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "phase_completion",
+                    "isCollection": false,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Email additional information",
+                    "longDisplayName": "Email additional information",
+                    "internalName": "email_additional_information",
+                    "description": "Additional information for email",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "email_additional_information",
+                    "isCollection": false,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Category progress",
+                    "longDisplayName": "Category progress",
+                    "internalName": "categories",
+                    "description": "List of question categories and their progress",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "progress",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Default for gates list",
+                    "longDisplayName": "Default for gates list",
+                    "internalName": "default_for_gates_list",
+                    "description": "List of gates that are default in this quesionnaire",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "default_for_gates",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Trade Design files",
+                    "longDisplayName": "Trade Design files",
+                    "internalName": "trade_design_files",
+                    "description": "List of files attached to Trade Design phase",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "SAP files",
+                    "longDisplayName": "SAP files",
+                    "internalName": "sap_files",
+                    "description": "List of files attached to SAP phase",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                }
+            ],
+            "actions": [
+                {
+                    "internalName": "backup_restore_templates"
+                },
+                {
+                    "internalName": "create_update_questionnaire_template"
+                },
+                {
+                    "internalName": "answer_all_questions"
+                },
+                {
+                    "internalName": "answer_next_question"
+                },
+                {
+                    "internalName": "assign_category_responsible"
+                },
+                {
+                    "internalName": "assign_default_gate"
+                },
+                {
+                    "internalName": "bulk_create_question"
+                },
+                {
+                    "internalName": "bulk_delete"
+                },
+                {
+                    "internalName": "copy_questionnaire"
+                },
+                {
+                    "internalName": "create_question"
+                },
+                {
+                    "internalName": "create_trade_assessment_category"
+                },
+                {
+                    "internalName": "delete_category"
+                },
+                {
+                    "internalName": "delete_default_gate"
+                },
+                {
+                    "internalName": "delete_questionnaire"
+                },
+                {
+                    "internalName": "delete_questionnaire_file"
+                },
+                {
+                    "internalName": "edit_category_list"
+                },
+                {
+                    "internalName": "edit_phase_status_in_category"
+                },
+                {
+                    "internalName": "edit_phase_status_in_gate"
+                },
+                {
+                    "internalName": "edit_questionnaire"
+                },
+                {
+                    "internalName": "edit_questionnaire_file"
+                },
+                {
+                    "internalName": "edit_questionnaire_summary"
+                },
+                {
+                    "internalName": "populate_from_template"
+                },
+                {
+                    "internalName": "populate_trade_assessment"
+                },
+                {
+                    "internalName": "publish_template"
+                },
+                {
+                    "internalName": "revert_delete_category"
+                },
+                {
+                    "internalName": "revert_delete_questionnaire"
+                },
+                {
+                    "internalName": "set_phase_completed"
+                },
+                {
+                    "internalName": "toggle_questionnaire_status"
+                },
+                {
+                    "internalName": "upload_questionnaire_file"
+                }
+            ]
+        },
+        {
+            "displayName": "Question",
+            "internalName": "question",
+            "pluralName": "questions",
+            "description": "A question with an answer.",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [
+                {
+                    "name": "Questionnaire Id Index",
+                    "columns": "questionnaire_id"
+                },
+                {
+                    "name": "Question link Id Index",
+                    "columns": "link_id"
+                }
+            ],
+            "uniqueConstraints": [
+                {
+                    "displayName": "Unique Category questions",
+                    "description": "Each question can only be present in a single category once",
+                    "internalName": "question_category_questions_text_unique",
+                    "rowFilterExpression": "deleted IS NOT true",
+                    "columnExpressions": [
+                        {
+                            "columnExpression": "questionnaire_id"
+                        },
+                        {
+                            "columnExpression": "phase"
+                        },
+                        {
+                            "columnExpression": "category_id"
+                        },
+                        {
+                            "columnExpression": "parent_question_id"
+                        },
+                        {
+                            "columnExpression": "question_text"
+                        }
+                    ]
+                },
+                {
+                    "displayName": "Unique Question Link Id",
+                    "description": "Link id of a question must be unique through out the solution",
+                    "internalName": "link_id_questions_unique",
+                    "rowFilterExpression": "deleted IS NOT true",
+                    "columnExpressions": [
+                        {
+                            "columnExpression": "link_id"
+                        }
+                    ]
+                }
+            ],
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Questionnaire",
+                    "longDisplayName": "Questionnaire",
+                    "internalName": "questionnaire_id",
+                    "description": "Reference to the questionnaire that this question belongs to.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Responsible",
+                    "longDisplayName": "Person responsible for answering the question",
+                    "internalName": "responsible_id",
+                    "description": "Person responsible for answering the question.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Phase",
+                    "longDisplayName": "Phase",
+                    "internalName": "phase",
+                    "description": "Name of the phase that this question relates to.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Category Id",
+                    "longDisplayName": "Category Id",
+                    "internalName": "category_id",
+                    "description": "Category Id that this question is part of.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Question text",
+                    "longDisplayName": "Question text",
+                    "internalName": "question_text",
+                    "description": "The text of the question.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "email_notification_task_message",
+                    "shortDisplayName": "Email Notification Task Message",
+                    "longDisplayName": "Email Notification Task Message",
+                    "description": "Used to transfer data from the question actions to enrichment rules",
+                    "group": "question",
+                    "status": "Active"
+                },
+                {
+                    "shortDisplayName": "Condidition",
+                    "longDisplayName": "Question condition",
+                    "internalName": "question_condition",
+                    "description": "The condition for the question to be shown.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Answer type",
+                    "longDisplayName": "Answer type",
+                    "internalName": "answer_type",
+                    "description": "Type of answer: either Text or Boolean.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Allow pending answer",
+                    "longDisplayName": "Allow pending answer",
+                    "internalName": "allow_pending",
+                    "description": "Allow answer to be marked pending for a question",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Confidentiality",
+                    "longDisplayName": "Confidentiality",
+                    "internalName": "confidentiality",
+                    "description": "Confidentiality level of the question showing if it is expected to contain confidential information. (Confidential / Non-Confidential)",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Parent question",
+                    "longDisplayName": "Parent question",
+                    "internalName": "parent_question_id",
+                    "description": "Reference to parent question to which this question is conditionally shown based on the answer.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Parent question text",
+                    "longDisplayName": "Parent question text",
+                    "internalName": "parent_question_text",
+                    "description": "Used for identification of parent question id.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Sub-questions order",
+                    "longDisplayName": "Sub-questions order",
+                    "internalName": "sub_questions_order",
+                    "description": "String list of ordered sub-question IDs if given.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Files Allowed",
+                    "longDisplayName": "Files Allowed",
+                    "internalName": "files_allowed",
+                    "description": "Whether file attachments are allowed on the answer to the question or not.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Order",
+                    "longDisplayName": "Order",
+                    "internalName": "order",
+                    "description": "The ordinal position of the question in the questionnaire.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Integer"
+                },
+                {
+                    "shortDisplayName": "Is notification required",
+                    "longDisplayName": "Is notification required",
+                    "internalName": "notification",
+                    "description": "User must be notified on change to the answer.",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Deleted",
+                    "longDisplayName": "Question deleted",
+                    "internalName": "deleted",
+                    "description": "Deletion status of the question",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Attention",
+                    "longDisplayName": "Attention",
+                    "internalName": "attention",
+                    "description": "Attention status of the question",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Notification sent",
+                    "longDisplayName": "Notification sent",
+                    "internalName": "notification_sent",
+                    "description": "Important question notification status",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Link Id",
+                    "longDisplayName": "Link Id",
+                    "internalName": "link_id",
+                    "description": "Link id of parent question",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Text value",
+                    "longDisplayName": "Text value",
+                    "internalName": "answer_text",
+                    "description": "Answer value to a text-based question.",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Boolean value",
+                    "longDisplayName": "Boolean value",
+                    "internalName": "answer_boolean",
+                    "description": "Answer value to a yes/no question.",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Answer Pending",
+                    "longDisplayName": "Answer Pending",
+                    "internalName": "answer_pending",
+                    "description": "Indicate that final answer is pending external evaluation.",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Answering user",
+                    "longDisplayName": "Answering user",
+                    "internalName": "answered_by_user_id",
+                    "description": "Id of user answering the question.",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Answering role",
+                    "longDisplayName": "Answering role",
+                    "internalName": "answered_by_user_role",
+                    "description": "Role of user answering the question.",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Source system field",
+                    "longDisplayName": "Source system field",
+                    "internalName": "source_system_field",
+                    "description": "Field identification for source system population of answer",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Alert text",
+                    "longDisplayName": "Alert text",
+                    "internalName": "alert_text",
+                    "description": "Alert text for availability to other entities.",
+                    "group": "alerting",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Question answered",
+                    "longDisplayName": "Question answered",
+                    "internalName": "question_answered",
+                    "description": "Derived indication whether the question is considered answered by the system.",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "External answer source",
+                    "longDisplayName": "External answer source",
+                    "internalName": "external_answer_source",
+                    "description": "Indicates the project attribute to check for external system answer",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "External system name",
+                    "longDisplayName": "External system name",
+                    "internalName": "external_system_name",
+                    "description": "The name of the external system that the answer was taken from",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Is external answer",
+                    "longDisplayName": "Is external answer",
+                    "internalName": "is_external_answer",
+                    "description": "Indicates whether the answer is from external system",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Is external answer accepted",
+                    "longDisplayName": "Is external answer accepted",
+                    "internalName": "is_external_answer_accepted",
+                    "description": "Indicates whether the answer from external system is accepted",
+                    "group": "answer",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Region",
+                    "longDisplayName": "World Region",
+                    "internalName": "world_region",
+                    "description": "Region of world the project belongs to (copy from parent for permission lookup)",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                }
+            ],
+            "complexAttributeTypes": [
+                {
+                    "shortDisplayName": "Files",
+                    "longDisplayName": "Files",
+                    "internalName": "files",
+                    "description": "List of files attached to this question",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Pending Alerts",
+                    "longDisplayName": "Pending Alerts",
+                    "internalName": "pending_alerts",
+                    "description": "List of alerts raised on this question",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "question_alert",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Email additional information",
+                    "longDisplayName": "Email additional information",
+                    "internalName": "email_additional_information",
+                    "description": "Additional information for email",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "email_additional_information",
+                    "isCollection": false,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                }
+            ],
+            "actions": [
+                {
+                    "internalName": "answer_question"
+                },
+                {
+                    "internalName": "assign_question_responsible"
+                },
+                {
+                    "internalName": "create_sub_question"
+                },
+                {
+                    "internalName": "delete_file_answer_question"
+                },
+                {
+                    "internalName": "delete_question"
+                },
+                {
+                    "internalName": "edit_question"
+                },
+                {
+                    "internalName": "edit_sub_question"
+                },
+                {
+                    "internalName": "mark_question_as_attention"
+                },
+                {
+                    "internalName": "notify_important_question"
+                },
+                {
+                    "internalName": "order_sub_questions"
+                },
+                {
+                    "internalName": "revert_delete_question"
+                },
+                {
+                    "internalName": "unmark_question_as_attention"
+                },
+                {
+                    "internalName": "update_external_answer_acceptance"
+                },
+                {
+                    "internalName": "upload_file_answer_question"
+                }
+            ]
+        },
+        {
+            "internalName": "comment",
+            "pluralName": "comments",
+            "displayName": "Comment",
+            "description": "Comments on the parent entity",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [
+                {
+                    "name": "Parent entity identifier",
+                    "columns": "parent_entity_id"
+                }
+            ],
+            "uniqueConstraints": [],
+            "attributeTypes": [
+                {
+                    "valueDataType": "Guid",
+                    "internalName": "parent_entity_id",
+                    "shortDisplayName": "Parent Entity Id",
+                    "longDisplayName": "Parent Entity Id",
+                    "description": "Id of parent entity the comment belongs to ",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Guid",
+                    "internalName": "created_by",
+                    "shortDisplayName": "Created by",
+                    "longDisplayName": "Created By",
+                    "description": "Id of the user comments",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "DateTime",
+                    "internalName": "created",
+                    "shortDisplayName": "Created",
+                    "longDisplayName": "Created",
+                    "description": "The date comment created",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "comment_text",
+                    "shortDisplayName": "Comment",
+                    "longDisplayName": "Comment",
+                    "description": "Text value of the comment",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "email_notification_task_message",
+                    "shortDisplayName": "Email Notification Task Message",
+                    "longDisplayName": "Email Notification Task Message",
+                    "description": "Used to transfer data from the comment actions to enrichment rules",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "file_reference",
+                    "shortDisplayName": "File Reference",
+                    "longDisplayName": "File Reference",
+                    "description": "File Id attached to the comment",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "file_name",
+                    "shortDisplayName": "File Name",
+                    "longDisplayName": "File Name",
+                    "description": "File name attached to the comment",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "parent_entity_type",
+                    "shortDisplayName": "Parent Entity Type",
+                    "longDisplayName": "Parent Entity Type",
+                    "description": "Type of the parent entity the comment belongs to",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Guid",
+                    "internalName": "created_by_role",
+                    "shortDisplayName": "Created By Role",
+                    "longDisplayName": "Created By Role",
+                    "description": "Role Id of the user created the comment",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "valueDataType": "Text",
+                    "internalName": "phase",
+                    "shortDisplayName": "Phase",
+                    "longDisplayName": "Phase",
+                    "description": "Internal value of the phase the comment belongs to",
+                    "group": "comment",
+                    "status": "Active"
+                },
+                {
+                    "shortDisplayName": "Region",
+                    "longDisplayName": "World Region",
+                    "internalName": "world_region",
+                    "description": "Region of world the project belongs to (copy from parent for permission lookup)",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Confidentiality",
+                    "longDisplayName": "Confidentiality",
+                    "internalName": "confidentiality",
+                    "description": "Confidentiality level of the question showing if it is expected to contain confidential information. (copy from parent for permission lookup)",
+                    "group": "question",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                }
+            ],
+            "actions": [
+                {
+                    "internalName": "create_comment"
+                }
+            ]
+        },
+        {
+            "displayName": "Legacy Fl",
+            "internalName": "flight_leg",
+            "pluralName": "flightlegs",
+            "description": "Legacy entity for technical reasons.",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [],
+            "uniqueConstraints": [],
+            "attributeTypes": [],
+            "complexAttributeTypes": [],
+            "actions": []
+        },
+        {
+            "displayName": "Legacy Gl",
+            "internalName": "ground_leg",
+            "pluralName": "groundlegs",
+            "description": "Legacy entity for technical reasons.",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [],
+            "uniqueConstraints": [],
+            "attributeTypes": [],
+            "complexAttributeTypes": [],
+            "actions": []
+        },
+        {
+            "displayName": "Legacy Vi",
+            "internalName": "visit",
+            "pluralName": "visits",
+            "description": "Legacy entity for technical reasons.",
+            "status": "Active",
+            "retention": {
+                "messageRetention": []
+            },
+            "indexes": [],
+            "uniqueConstraints": [],
+            "attributeTypes": [],
+            "complexAttributeTypes": [],
+            "actions": []
+        }
+    ],
+    "complexAttributeEntityTypes": [
+        {
+            "displayName": "Progress",
+            "internalName": "progress",
+            "pluralName": "progress",
+            "description": "Progress towards a gate of a project or phase or category for a gate.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "System name",
+                    "longDisplayName": "System name",
+                    "internalName": "internal_system_name",
+                    "description": "Unique internal system name used by business rules",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "System Id",
+                    "longDisplayName": "System Id",
+                    "internalName": "internal_system_id",
+                    "description": "Unique internal system id",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Name",
+                    "longDisplayName": "Name",
+                    "internalName": "name",
+                    "description": "Display Name of gate or phase",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Required",
+                    "longDisplayName": "Required",
+                    "internalName": "required",
+                    "description": "Whether work on the gate or phase is required",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Commenced",
+                    "longDisplayName": "Commenced",
+                    "internalName": "commenced",
+                    "description": "Whether work on the gate or phase has commenced",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Answered",
+                    "longDisplayName": "Answered",
+                    "internalName": "answered",
+                    "description": "Whether all questions for the gate or phase have been answered",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Completed",
+                    "longDisplayName": "Completed",
+                    "internalName": "completed",
+                    "description": "Whether gate or phase is completed",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Completion Date",
+                    "longDisplayName": "Completion Date",
+                    "internalName": "completion_date",
+                    "description": "The date of the last completion",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "DateTime"
+                },
+                {
+                    "shortDisplayName": "Items Total",
+                    "longDisplayName": "Items Total",
+                    "internalName": "items_total",
+                    "description": "Total number of items",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Integer"
+                },
+                {
+                    "shortDisplayName": "Items Completed",
+                    "longDisplayName": "Items Completed",
+                    "internalName": "items_completed",
+                    "description": "Total number of items completed",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Integer"
+                },
+                {
+                    "shortDisplayName": "Order",
+                    "longDisplayName": "Order",
+                    "internalName": "order",
+                    "description": "The ordinal position of a gate",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Integer"
+                },
+                {
+                    "shortDisplayName": "Completed manually",
+                    "longDisplayName": "Completed manually",
+                    "internalName": "completed_manually",
+                    "description": "Whether gate or phase is completed by hand, which has higher priority in case of recalculation",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "is active",
+                    "longDisplayName": "is active",
+                    "internalName": "is_active",
+                    "description": "is the related gate active",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                }
+            ]
+        },
+        {
+            "displayName": "Phase completion",
+            "internalName": "phase_completion",
+            "pluralName": "phase_completions",
+            "description": "Manual completion of a phase.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Name",
+                    "longDisplayName": "Name",
+                    "internalName": "name",
+                    "description": "Name of phase",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Completed",
+                    "longDisplayName": "Completed",
+                    "internalName": "completed",
+                    "description": "Whether gate or phase is completed",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                }
+            ]
+        },
+        {
+            "displayName": "Email additional information",
+            "internalName": "email_additional_information",
+            "pluralName": "email_additional_information",
+            "description": "Additional information for email",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Parent Entity Id",
+                    "longDisplayName": "Parent Entity Id",
+                    "internalName": "parent_entity_id",
+                    "description": "Enitity Id of Parent Type",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "SP Number",
+                    "longDisplayName": "SP Number",
+                    "internalName": "sp_number",
+                    "description": "The number of the Sales Project",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Gate Name",
+                    "longDisplayName": "Gate Name",
+                    "internalName": "gate",
+                    "description": "The name of the Gate",
+                    "group": "information",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                }
+            ]
+        },
+        {
+            "displayName": "Question Category List",
+            "internalName": "question_category_list",
+            "pluralName": "question_category_lists",
+            "description": "Ordered list of categories of questions.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Category Id",
+                    "longDisplayName": "Category Id",
+                    "internalName": "category_id",
+                    "description": "Id of category",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Category Name",
+                    "longDisplayName": "Category Name",
+                    "internalName": "category_name",
+                    "description": "Name of category",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Question Ids",
+                    "longDisplayName": "Question Ids",
+                    "internalName": "question_ids",
+                    "description": "Ordered list of question ids (GUIDs) separated by commas.",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Trade Assessment Id",
+                    "longDisplayName": "Trade Assessment Id",
+                    "internalName": "trade_assessment_id",
+                    "description": "Id of the trade assessment of the category.",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                }
+            ],
+            "complexAttributeTypes": [
+                {
+                    "shortDisplayName": "Phases",
+                    "longDisplayName": "Phases",
+                    "internalName": "phases",
+                    "description": "List of phases and their progress in the category",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "progress",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "shortDisplayName": "Phase completion",
+                    "longDisplayName": "Phase completion",
+                    "internalName": "phase_completion",
+                    "description": "Completion of phase in the category",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "phase_completion",
+                    "isCollection": false,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                }
+            ]
+        },
+        {
+            "displayName": "Question Assignment Notification List",
+            "internalName": "question_assignment_notification_list",
+            "pluralName": "question_assignment_notification_lists",
+            "description": "Ordered list of categories of questions.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Question Id",
+                    "longDisplayName": "Question Id",
+                    "internalName": "question_id",
+                    "description": "Id of question",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Question Link Id",
+                    "longDisplayName": "Question Link Id",
+                    "internalName": "question_link_id",
+                    "description": "Link Id of question",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "User Id",
+                    "longDisplayName": "User Id",
+                    "internalName": "user_id",
+                    "description": "Name of category",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Date of assignment",
+                    "longDisplayName": "Date of assignment",
+                    "internalName": "assignment_date",
+                    "description": "Date of assignment",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "DateTime"
+                }
+            ]
+        },
+        {
+            "displayName": "Assessment Milestone",
+            "internalName": "assessment_milestone",
+            "pluralName": "assessment_milestones",
+            "description": "Milestone in the assessment timeline.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Name",
+                    "longDisplayName": "Name",
+                    "internalName": "name",
+                    "description": "Name of milestone",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Internal System Name",
+                    "longDisplayName": "Internal System Name",
+                    "internalName": "internal_system_name",
+                    "description": "Internal System Name of milestone for lookup in master data",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Gate",
+                    "longDisplayName": "Gate",
+                    "internalName": "gate",
+                    "description": "Name of the gate that this milestone is set for, determining the roles that should be notified.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Deadline",
+                    "longDisplayName": "Deadline",
+                    "internalName": "deadline",
+                    "description": "Deadline of the milestone. Either calculated from the related sales_milestone or overridden by user.",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Datetime"
+                },
+                {
+                    "shortDisplayName": "Deadline updated",
+                    "longDisplayName": "Deadline updated",
+                    "internalName": "deadline_updated",
+                    "description": "When was the deadline last updated",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Datetime"
+                },
+                {
+                    "shortDisplayName": "Completed",
+                    "longDisplayName": "Completed",
+                    "internalName": "completed",
+                    "description": "Whether work on the gate or phase has been completed.",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Notified",
+                    "longDisplayName": "Users notified",
+                    "internalName": "users_notified",
+                    "description": "Comma-separated list of users that have been sent a notification (or empty if no notification has been sent).",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                }
+            ]
+        },
+        {
+            "displayName": "Sales Milestone",
+            "internalName": "sales_milestone",
+            "pluralName": "sales_milestones",
+            "description": "Milestone in the SalesForce timeline.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Id",
+                    "longDisplayName": "Identifier",
+                    "internalName": "id",
+                    "description": "Unique externally given identifier of milestone.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Name",
+                    "longDisplayName": "Name",
+                    "internalName": "name",
+                    "description": "Descriptive name of milestone.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Deadline",
+                    "longDisplayName": "Deadline",
+                    "internalName": "deadline",
+                    "description": "Deadline of the milestone.",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Datetime"
+                },
+                {
+                    "shortDisplayName": "Deadline updated",
+                    "longDisplayName": "Deadline updated",
+                    "internalName": "deadline_updated",
+                    "description": "When was the deadline last updated",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Datetime"
+                },
+                {
+                    "shortDisplayName": "IsActual",
+                    "longDisplayName": "IsActual",
+                    "internalName": "is_actual",
+                    "description": "Is Actual",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                }
+            ]
+        },
+        {
+            "displayName": "Project Role",
+            "internalName": "project_role",
+            "pluralName": "project_roles",
+            "description": "Holder of a single role in the project",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "Role",
+                    "longDisplayName": "Role",
+                    "internalName": "role",
+                    "description": "Name of role",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Contact",
+                    "longDisplayName": "Contact",
+                    "internalName": "contact",
+                    "description": "User holding the role.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                },
+                {
+                    "shortDisplayName": "Email",
+                    "longDisplayName": "Email",
+                    "internalName": "email",
+                    "description": "Used to display email in the UI. (Value contain user guid ID)",
+                    "group": "identifier",
+                    "status": "Active",
+                    "valueDataType": "Guid"
+                }
+            ]
+        },
+        {
+            "displayName": "File Upload",
+            "internalName": "file_upload",
+            "pluralName": "file_uploads",
+            "description": "Files attached to an entity",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "longDisplayName": "File Name",
+                    "shortDisplayName": "File Name",
+                    "internalName": "file_name",
+                    "description": "",
+                    "valueDataType": "text",
+                    "status": "Active"
+                },
+                {
+                    "longDisplayName": "Full file Name",
+                    "shortDisplayName": "Full file Name",
+                    "internalName": "full_file_name",
+                    "description": "",
+                    "valueDataType": "text",
+                    "status": "Active"
+                },
+                {
+                    "longDisplayName": "File Reference",
+                    "shortDisplayName": "File Reference",
+                    "internalName": "file_reference",
+                    "description": "",
+                    "valueDataType": "guid",
+                    "status": "Active"
+                },
+                {
+                    "longDisplayName": "Created Date",
+                    "shortDisplayName": "Created Date",
+                    "internalName": "created_date",
+                    "description": "",
+                    "valueDataType": "DateTime",
+                    "status": "Active"
+                }
+            ]
+        },
+        {
+            "displayName": "Question Alert",
+            "internalName": "question_alert",
+            "pluralName": "question_alerts",
+            "description": "Alerts raised on the question",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "longDisplayName": "Message",
+                    "shortDisplayName": "Message",
+                    "internalName": "message",
+                    "description": "",
+                    "valueDataType": "text",
+                    "status": "Active"
+                },
+                {
+                    "longDisplayName": "Type",
+                    "shortDisplayName": "Type",
+                    "internalName": "type",
+                    "description": "",
+                    "valueDataType": "text",
+                    "status": "Active"
+                },
+                {
+                    "longDisplayName": "Phase",
+                    "shortDisplayName": "Phase",
+                    "internalName": "phase",
+                    "description": "Alert phase should be one of the ContextInterfaces.Models.Data.AlertLevel enum",
+                    "valueDataType": "text",
+                    "status": "Active"
+                }
+            ]
+        },
+        {
+            "displayName": "Default for gates",
+            "internalName": "default_for_gates",
+            "pluralName": "default_for_gates",
+            "description": "Determines which gate is default in a quesionnaire",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "longDisplayName": "Gate name",
+                    "shortDisplayName": "Gate name",
+                    "internalName": "gate_name",
+                    "description": "Name of the gate that is default in a questionnaire",
+                    "valueDataType": "text",
+                    "status": "Active"
+                }
+            ]
+        },
+        {
+            "displayName": "Opportunity Team Member",
+            "internalName": "opportunity_team_member",
+            "pluralName": "opportunity_team_members",
+            "description": "Opportunity team member of project.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "shortDisplayName": "IsPrimary",
+                    "longDisplayName": "IsPrimary",
+                    "internalName": "is_primary",
+                    "description": "Is primary",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Boolean"
+                },
+                {
+                    "shortDisplayName": "Alias",
+                    "longDisplayName": "Alias",
+                    "internalName": "alias",
+                    "description": "Alias",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                },
+                {
+                    "shortDisplayName": "Role",
+                    "longDisplayName": "Role",
+                    "internalName": "role",
+                    "description": "Role",
+                    "group": "data",
+                    "status": "Active",
+                    "valueDataType": "Text"
+                }
+            ]
+        }
+    ]
+}

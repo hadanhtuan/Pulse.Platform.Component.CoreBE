@@ -1,0 +1,635 @@
+{
+    "note": null,
+    "version": 0,
+    "validFrom": "2024-01-01T00:00:00.000000",
+    "entityTypes": [
+        {
+            "displayName": "Project",
+            "internalName": "project",
+            "description": "Project.",
+            "status": "Active",
+            "indexes": [
+                {
+                    "name": "Project link id index",
+                    "columns": "link_id"
+                }
+            ],
+            "uniqueConstraints": [
+                {
+                    "displayName": "Unique Project Link Id",
+                    "description": "Link id of a project must be unique through out the solution",
+                    "internalName": "link_id_projects_unique",
+                    "columnExpressions": [
+                        "link_id"
+                    ]
+                }
+            ],
+            "attributeTypes": [
+                {
+                    "displayName": "Link Id",
+                    "internalName": "link_id",
+                    "description": "Link id of a project",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Guid",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Opportunity Name",
+                    "internalName": "name",
+                    "description": "Opportunity name of project",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "SP Number",
+                    "internalName": "sp_number",
+                    "description": "The number of the Sales Project",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Integer",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Opportunity ID",
+                    "internalName": "opportunity_id",
+                    "description": "ID of the opportunity",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Region",
+                    "internalName": "world_region",
+                    "description": "Region of the world the project belongs to",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Country CRM",
+                    "internalName": "country_crm",
+                    "description": "Country CRM",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "CRM Country Region",
+                    "internalName": "crm_country_region",
+                    "description": "CRM Country Region",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Account Name",
+                    "internalName": "account_name",
+                    "description": "Account Name",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Project status",
+                    "internalName": "project_status",
+                    "description": "The status of the project",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Site Center (GPS)",
+                    "internalName": "site_center",
+                    "description": "Site Center (GPS)",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Distance to Shore",
+                    "internalName": "distance_to_shore",
+                    "description": "The distance to the shore",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Distance to Shore Unit",
+                    "internalName": "distance_to_shore_unit",
+                    "description": "Unit for distance to shore [km or Nautical Miles]",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Gate",
+                    "internalName": "project_gate_name",
+                    "description": "Gate Name of a project",
+                    "group": "information",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                }
+            ],
+            "complexAttributeTypes": [
+                {
+                    "displayName": "Timeline",
+                    "internalName": "assessment_timeline",
+                    "description": "Milestones for the trade flow assessment project.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "assessment_milestone",
+                    "isCollection": false,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Sales Timeline",
+                    "internalName": "sales_timeline",
+                    "description": "SalesProject timeline milestones.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "sales_milestone",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{name}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{name}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Roles",
+                    "internalName": "roles",
+                    "description": "Users assigned different roles in the project.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Sales Manager",
+                    "internalName": "sales_managers",
+                    "description": "Users assigned the role Input Provider: Sales Manager.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Construction Manager",
+                    "internalName": "construction_managers",
+                    "description": "Users assigned the role Input Provider: Construction Manager.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Opportunity Team Names",
+                    "internalName": "salesteam_names",
+                    "description": "Names for the sales team members assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Opportunity Team Emails",
+                    "internalName": "salesteam_emails",
+                    "description": "Emails for the sales team members assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Opportunity Team Roles",
+                    "internalName": "salesteam_roles",
+                    "description": "Role for the sales team members assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Opportunity Team Primary",
+                    "internalName": "salesteam_roles_primary",
+                    "description": "The boolean value for primary member role for the sales team users assigned at different stages of the project.",
+                    "status": "Deprecated",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Project Manager",
+                    "internalName": "project_managers",
+                    "description": "Users assigned the role Input Provider: Project Manager.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Tech Project",
+                    "internalName": "tech_project_users",
+                    "description": "Users assigned the role Input Provider: Tech Project.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Tax / VAT Regional",
+                    "internalName": "tax_vat_regional_users",
+                    "description": "Users assigned the role Solution Owner: Tax / VAT Regional.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Tax / VAT Global",
+                    "internalName": "tax_vat_global_users",
+                    "description": "Users assigned the role Solution Owner: Tax / VAT Global.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Customs",
+                    "internalName": "customs_users",
+                    "description": "Users assigned the role Solution Owner: Customs.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Transfer Pricing",
+                    "internalName": "transfer_pricing",
+                    "description": "Users assigned the role Solution Owner: Transfer Pricing.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "SAP Architect",
+                    "internalName": "sap_architects",
+                    "description": "Users assigned the role SAP Architect.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "SAP Developer",
+                    "internalName": "sap_developers",
+                    "description": "Users assigned the role SAP Developer.",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "project_role",
+                    "isCollection": true,
+                    "shortDisplayTemplate": "{{role}}",
+                    "shortDisplaySeparator": ",",
+                    "hoverDisplayTemplate": "{{role}}",
+                    "hoverDisplaySeparator": ",<br/>",
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Proposal Submission Files",
+                    "internalName": "proposal_submission_files",
+                    "description": "List of files attached to Proposal Submission gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Contracting / FOI Files",
+                    "internalName": "contracting_foi_files",
+                    "description": "List of files attached to Contracting / FOI Files gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Sales to Construction Files",
+                    "internalName": "sales_to_construction_files",
+                    "description": "List of files attached to Sales to Construction gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "displayName": "Construction to Service Files",
+                    "internalName": "construction_to_service_files",
+                    "description": "List of files attached to Construction to Service gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                },
+                {
+                    "displayName": "During Service Files",
+                    "internalName": "during_service_files",
+                    "description": "List of files attached to During Service Files gate",
+                    "status": "Active",
+                    "complexDataTypeInternalName": "file_upload",
+                    "isCollection": true,
+                    "updateAction": null
+                }
+            ],
+            "actions": [
+                {
+                    "internalName": "assign_assessment_milestones"
+                },
+                {
+                    "internalName": "assign_roles"
+                },
+                {
+                    "internalName": "assign_sales_milestones"
+                },
+                {
+                    "internalName": "project"
+                },
+                {
+                    "internalName": "create_questionnaire"
+                },
+                {
+                    "internalName": "map_sales_manager"
+                }
+            ]
+        }
+    ],
+    "complexDataTypes": [
+        {
+            "displayName": "Assessment Milestone",
+            "internalName": "assessment_milestone",
+            "description": "Milestone in the assessment timeline.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "displayName": "Name",
+                    "internalName": "name",
+                    "description": "Name of milestone",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Internal System Name",
+                    "internalName": "internal_system_name",
+                    "description": "Internal System Name of milestone for lookup in master data",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Gate",
+                    "internalName": "gate",
+                    "description": "Name of the gate that this milestone is set for, determining the roles that should be notified.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Deadline",
+                    "internalName": "deadline",
+                    "description": "Deadline of the milestone. Either calculated from the related sales_milestone or overridden by user.",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Datetime"
+                },
+                {
+                    "displayName": "Deadline updated",
+                    "internalName": "deadline_updated",
+                    "description": "When was the deadline last updated",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Datetime"
+                },
+                {
+                    "displayName": "Completed",
+                    "internalName": "completed",
+                    "description": "Whether work on the gate or phase has been completed.",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Boolean"
+                },
+                {
+                    "displayName": "Notified",
+                    "internalName": "users_notified",
+                    "description": "Comma-separated list of users that have been sent a notification (or empty if no notification has been sent).",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                }
+            ]
+        },
+        {
+            "displayName": "Sales Milestone",
+            "internalName": "sales_milestone",
+            "description": "Milestone in the SalesForce timeline.",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "displayName": "Id",
+                    "internalName": "id",
+                    "description": "Unique externally given identifier of milestone.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Name",
+                    "internalName": "name",
+                    "description": "Descriptive name of milestone.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": true
+                },
+                {
+                    "displayName": "Deadline",
+                    "internalName": "deadline",
+                    "description": "Deadline of the milestone.",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Datetime"
+                },
+                {
+                    "displayName": "Deadline updated",
+                    "internalName": "deadline_updated",
+                    "description": "When was the deadline last updated",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Datetime"
+                },
+                {
+                    "displayName": "IsActual",
+                    "internalName": "is_actual",
+                    "description": "Is Actual",
+                    "group": "data",
+                    "status": "Active",
+                    "dataType": "Boolean"
+                }
+            ]
+        },
+        {
+            "displayName": "Project Role",
+            "internalName": "project_role",
+            "description": "Holder of a single role in the project",
+            "status": "Active",
+            "attributeTypes": [
+                {
+                    "displayName": "Role",
+                    "internalName": "role",
+                    "description": "Name of role",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Text",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Contact",
+                    "internalName": "contact",
+                    "description": "User holding the role.",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Guid",
+                    "isRequired": false
+                },
+                {
+                    "displayName": "Email",
+                    "internalName": "email",
+                    "description": "Used to display email in the UI. (Value contain user guid ID)",
+                    "group": "identifier",
+                    "status": "Active",
+                    "dataType": "Guid",
+                    "isRequired": false
+                }
+            ]
+        },
+        {
+            "displayName": "File Upload",
+            "internalName": "file_upload",
+            "description": "Files attached to an entity",
+            "status": "Active",
+            "attributeTypes": [
+              {
+                "displayName": "File Name",
+                "internalName": "file_name",
+                "description": "",
+                "valueDataType": "text",
+                "status": "Active",
+                "dataType": "Text",
+                "isRequired": false
+              },
+              {
+                "displayName": "Full file Name",
+                "internalName": "full_file_name",
+                "description": "",
+                "valueDataType": "text",
+                "status": "Active",
+                "dataType": "Text",
+                "isRequired": false
+              },
+              {
+                "displayName": "File Reference",
+                "internalName": "file_reference",
+                "description": "",
+                "valueDataType": "guid",
+                "status": "Active",
+                "dataType": "Text",
+                "isRequired": false
+              },
+              {
+                "displayName": "Created Date",
+                "internalName": "created_date",
+                "description": "",
+                "valueDataType": "DateTime",
+                "status": "Active",
+                "dataType": "Text",
+                "isRequired": false
+              }
+            ]
+          }
+    ]
+}

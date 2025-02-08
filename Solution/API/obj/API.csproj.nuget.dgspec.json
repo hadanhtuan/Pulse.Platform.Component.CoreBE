@@ -1,38 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\API\\API.csproj": {}
+    "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/API/API.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\API\\API.csproj": {
+    "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\API\\API.csproj",
+        "projectUniqueName": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/API/API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\hadt\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\practices\\pulse\\Platform.Component.CoreBE\\Solution\\API\\obj\\",
+        "projectPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/API/API.csproj",
+        "packagesPath": "/home/hadt/.nuget/packages/",
+        "outputPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/API/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\hadt\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/hadt/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/nc-pulse/_packaging/pulse/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj": {
+                "projectPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -94,7 +92,112 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj",
+        "projectName": "Pulse.Library",
+        "projectPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj",
+        "packagesPath": "/home/hadt/.nuget/packages/",
+        "outputPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/hadt/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/nc-pulse/_packaging/pulse/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GlobalIdentity": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "PermissionClientLibrary": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.7.1, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
