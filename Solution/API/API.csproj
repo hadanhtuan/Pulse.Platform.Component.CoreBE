@@ -22,5 +22,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Pulse.Library\Pulse.Library.csproj"/>
+        <ProjectReference Include="..\AODB\AODB.csproj"/>
     </ItemGroup>
 </Project>

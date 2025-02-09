@@ -151,10 +151,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "assessment_milestone",
                     "isCollection": false,
-                    "shortDisplayTemplate": "{{name}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{name}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -164,10 +160,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "sales_milestone",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{name}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{name}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -177,10 +169,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -190,10 +178,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -203,10 +187,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -216,10 +196,6 @@
                     "status": "Deprecated",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -229,10 +205,6 @@
                     "status": "Deprecated",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -242,10 +214,6 @@
                     "status": "Deprecated",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -255,10 +223,6 @@
                     "status": "Deprecated",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -268,10 +232,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -281,10 +241,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -294,10 +250,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -307,10 +259,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -320,10 +268,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -333,10 +277,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -346,10 +286,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -359,10 +295,6 @@
                     "status": "Active",
                     "complexDataTypeInternalName": "project_role",
                     "isCollection": true,
-                    "shortDisplayTemplate": "{{role}}",
-                    "shortDisplaySeparator": ",",
-                    "hoverDisplayTemplate": "{{role}}",
-                    "hoverDisplaySeparator": ",<br/>",
                     "updateAction": null
                 },
                 {
@@ -630,6 +562,6 @@
                 "isRequired": false
               }
             ]
-          }
+        }
     ]
 }

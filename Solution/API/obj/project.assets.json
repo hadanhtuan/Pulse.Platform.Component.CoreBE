@@ -3999,6 +3999,22 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "AODB/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Pulse.Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AODB.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AODB.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Pulse.Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -11197,6 +11213,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "AODB/1.0.0": {
+      "type": "project",
+      "path": "../AODB/AODB.csproj",
+      "msbuildProject": "../AODB/AODB.csproj"
+    },
     "Pulse.Library/1.0.0": {
       "type": "project",
       "path": "../Pulse.Library/Pulse.Library.csproj",
@@ -11205,6 +11226,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AODB >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.8",
       "Microsoft.EntityFrameworkCore >= 8.0.4",
       "Microsoft.Extensions.Configuration >= 8.0.0",
@@ -11240,6 +11262,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/AODB/AODB.csproj": {
+              "projectPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/AODB/AODB.csproj"
+            },
             "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj": {
               "projectPath": "/home/hadt/repo/Pulse.Platform.Component.CoreBE/Solution/Pulse.Library/Pulse.Library.csproj"
             }

@@ -19,26 +19,33 @@ public class AodbContextGenerator
     {
         SchemaVersion schema = Prepare(unpreparedSchema);
 
-        var contextPath = Path.GetFullPath(
+        var modelPath = Path.GetFullPath(
             "Model", solutionPath);
-        // var interfacePath = Path.GetFullPath(
-        //     "Model", solutionPath);
+        var contextPath = Path.GetFullPath(
+            "Context", solutionPath);
         var mockPath = Path.GetFullPath(
             "Mock", solutionPath);
 
         // Generate entities
         WriteToFile(
-            contextPath,
+            modelPath,
             "Entities/",
             aodbCodeGenerator.CreateEntities(schema)
         );
 
         // Generate complex datatypes
         WriteToFile(
-           contextPath,
+           modelPath,
            "ComplexDataTypes/",
            aodbCodeGenerator.CreateComplexDataTypes(schema)
-       );
+        );
+
+        // Generate context to query entities
+        WriteToFile(
+           contextPath,
+           "",
+           aodbCodeGenerator.CreateAodbContextInterface(schema)
+        );
     }
 
     private SchemaVersion Prepare(SchemaVersion schema)
